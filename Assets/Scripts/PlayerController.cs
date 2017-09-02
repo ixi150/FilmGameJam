@@ -23,8 +23,6 @@ public class PlayerController : MonoBehaviour
 
     Rigidbody2D rb;
 
-	public float specialWeapon;
-
     float horizontal;
     float vertical;
 
