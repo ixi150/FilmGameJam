@@ -27,25 +27,27 @@ public class PhysicsProjectile : MonoBehaviour
             if (player)
             {
                 player.DealDmg(dmg);
-                CameraShaker.AddShake(addShakeOnPlayerHit);
+                DestroyThisAndAddShake(addShakeOnPlayerHit);
             }
             else
             {
-                if (addShakeOnDestroy > 0)
-                    CameraShaker.AddShake(addShakeOnDestroy);
-                Destroy(gameObject);
-            }
-
-            if (destroyOnContact)
-            {
-                if (destroyEffect != null)
-                {
-                    Instantiate(destroyEffect, transform.position, Quaternion.identity);
-                }
-
-            }
+                DestroyThisAndAddShake(addShakeOnDestroy);
+            }           
         }
 
+    }
+
+    void DestroyThisAndAddShake(float shake)
+    {
+        if (destroyOnContact)
+        {
+            if (destroyEffect != null)
+            {
+                Instantiate(destroyEffect, transform.position, Quaternion.identity);
+            }
+        }
+        CameraShaker.AddShake(shake);
+        Destroy(gameObject);
     }
 
 	public void SetOwner(PlayerController control) {
