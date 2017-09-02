@@ -396,14 +396,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e60cd70c62341a4cb4961fa7e532d31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireRate: 2
-  spread: 20
+  fireRate: 10
+  spread: 1
   shootAmount: 5
   muzzle: {fileID: 4919163258037228}
-  projectile: {fileID: 50897724267649916, guid: bdef682f247bd1c4584b126e513f46ab,
+  projectile: {fileID: 50897724267649916, guid: e8fa4cd613671f74b82a08f1f2ac102d,
     type: 2}
-  shootForce: 20
-  cameraShakeAmplitude: 1
+  shootForce: 15
+  cameraShakeAmplitude: 0.5
   shootClip: {fileID: 8300000, guid: aeff529d31cf52b48a025b19c251c65f, type: 3}
   FireButton: joystick 1 button 1
 --- !u!114 &114491961418987860
@@ -441,6 +441,8 @@ MonoBehaviour:
   jumpButton: joystick 1 button 0
   horizontalAxis: Horizontal
   verticalAxis: Vertical
+  isFirstPlayer: 1
+  timer: {fileID: 0}
 --- !u!212 &212335766852982364
 SpriteRenderer:
   m_ObjectHideFlags: 1
