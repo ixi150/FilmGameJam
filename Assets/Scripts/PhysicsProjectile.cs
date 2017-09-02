@@ -4,43 +4,48 @@ using UnityEngine;
 
 public class PhysicsProjectile : MonoBehaviour
 {
-    public float lifetime = 5.0f;
+    public bool destroyOnContact = true;
     public GameObject destroyEffect;
+    public float addShakeOnDestroy = 1.5f;
+    public float addShakeOnPlayerHit = 5.0f;
+
 	public float dmg = 1f;
-    float timer;
 	PlayerController owner;
 	void Start ()
     {
-        timer = lifetime;
 	}
 	
-	void Update ()
-    {
-        timer -= Time.deltaTime;
-
-        if(timer <= 0)
-        {
-            Destroy(gameObject);
-        }
-	}
 
     void OnTriggerEnter2D(Collider2D col)
     {
-		var player = col.GetComponent<PlayerController> ();
-		if (player == owner && lifetime - timer < 0.5f)
-			return;
-
-        if (col.transform.tag != "Warp")
+        if (col.transform.tag != "Projectile")
         {
-            if (destroyEffect != null)
+            var player = col.GetComponent<PlayerController>();
+            if (player == owner)
+                return;
+
+            if (player)
             {
-                Instantiate(destroyEffect, transform.position, Quaternion.identity);
+                player.DealDmg(dmg);
+                CameraShaker.AddShake(addShakeOnPlayerHit);
             }
-			if (player) {
-				player.DealDmg (dmg);
-			}
-            Destroy(gameObject);
+            else
+            {
+                if (addShakeOnDestroy > 0)
+                    CameraShaker.AddShake(addShakeOnDestroy);
+                Destroy(gameObject);
+            }
+
+            if (destroyOnContact)
+            {
+                if (destroyEffect != null)
+                {
+                    Instantiate(destroyEffect, transform.position, Quaternion.identity);
+                }
+
+            }
         }
+
     }
 
 	public void SetOwner(PlayerController control) {
