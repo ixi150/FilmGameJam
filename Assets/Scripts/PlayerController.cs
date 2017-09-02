@@ -1,0 +1,127 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class PlayerController : MonoBehaviour
+{
+    public float moveSpeed = 5.0f;
+    public float jumpMultiplier = 10.0f;
+
+    public float groundThreshold = 0.1f;
+
+    public float aimSpeed = 5.0f;
+    public Transform arm;
+
+    public float inputThreshold = 0.1f;
+
+    public GameObject[] spritesX;
+    public GameObject[] spritesY;
+
+    float armAngle;
+
+    Rigidbody2D rb;
+
+    float horizontal;
+    float vertical;
+
+    Animator animator;
+
+    void Awake()
+    {
+        rb = GetComponent<Rigidbody2D>();
+        animator = GetComponentInChildren<Animator>();
+    }
+
+    void Update()
+    {
+        GetInput();
+        Move();
+        Aim();
+        UpdateAnimator();
+    }
+
+    void GetInput()
+    {
+        horizontal = Input.GetAxis("Horizontal");
+        vertical = Input.GetAxis("Vertical");
+    }
+
+    void Move()
+    {
+        var velocity = rb.velocity;
+        velocity.x = horizontal * moveSpeed;
+
+        if (Input.GetButtonDown("Jump") && Grounded())
+        {
+            velocity.y = jumpMultiplier * (-Physics2D.gravity.y * rb.mass);
+        }
+        rb.velocity = velocity;
+    }
+
+    void Aim()
+    {
+        if (InputIsActive())
+        {
+            var direction = new Vector2(horizontal, vertical);
+            armAngle = (Mathf.Atan2(direction.y, direction.x) * 180.0f / Mathf.PI);
+            arm.rotation = Quaternion.RotateTowards(arm.rotation, Quaternion.Euler(0, 0, armAngle), aimSpeed * Time.deltaTime);
+        }
+
+        var isRightSided = RightSided(armAngle);
+        float scaleFactor = isRightSided ? 1 : -1;
+        foreach (var sprite in spritesX)
+        {
+            sprite.transform.localScale = new Vector3(scaleFactor, 1, 1);
+        }
+
+        foreach (var sprite in spritesY)
+        {
+            sprite.transform.localScale = new Vector3(1, scaleFactor, 1);
+        }
+
+
+    }
+
+    void UpdateAnimator ()
+    {
+        animator.SetFloat("Horizontal", Mathf.Abs(horizontal));
+        animator.SetFloat("Vertical", rb.velocity.y);
+        animator.SetBool("Grounded", Grounded());
+    }
+
+    bool Grounded()
+    {
+        Collider2D[] cols = Physics2D.OverlapCircleAll(transform.position, groundThreshold);
+        if (cols.Length > 1)
+            return true;
+        else
+            return false;
+    }
+
+    bool InputIsActive()
+    {
+        if ((Mathf.Abs(horizontal) > inputThreshold) || (Mathf.Abs(vertical) > inputThreshold))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    public void WarpPlayer(Vector2 target)
+    {
+        transform.position = target;
+    }
+
+    bool RightSided(float angle)
+    {
+        if (angle < 0)
+            angle = 360 + angle;
+        if (angle > 90 && angle < 270)
+            return false;
+        else
+            return true;
+    }
+}
