@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Alienka
+  m_Controller: {fileID: 9100000, guid: 895d6e003c270ab46a11b57160648229, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 88871133196e74348a96967c86fcebf5, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 0bdf6e961baa9e149bef308143a84265, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 63d1795c797e02c4dabccdc96d42b2e5, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: fe2fac19897c8f345aa40320ae3b13b0, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: b0026c7fb3bfa7b48939f8ba6c7f4eb0, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 32d9052d297ca1649afb89966cbdaf20, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: d3f47b64858040245924589aaa8ab4f9, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: fc5aa971e79c92547addf84ec9d8c0e5, type: 2}
