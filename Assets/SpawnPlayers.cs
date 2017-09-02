@@ -13,7 +13,7 @@ public class SpawnPlayers : MonoBehaviour {
 		sett = GameObject.FindGameObjectWithTag ("Settings");
 		settings = sett.GetComponent<PlayerSettings> ();
 		SpawnPlayer (true, spawnP1Location, settings.charChoice1);
-		SpawnPlayer (true, spawnP2Location, settings.charChoice2);
+		SpawnPlayer (false, spawnP2Location, settings.charChoice2);
 	}
 	
 	// Update is called once per frame
@@ -22,10 +22,7 @@ public class SpawnPlayers : MonoBehaviour {
 	}
 
 	void SpawnPlayer(bool isFirstPlayer, Vector2 location, int characterIndex) {
-		/*
-		GameObject chars = Instantiate(charPrefabs[characterIndex], location,Quaternion.identity);
+		GameObject chars = Instantiate(charPrefabs[characterIndex-1], location,Quaternion.identity);
 		chars.GetComponent<PlayerController> ().isFirstPlayer = isFirstPlayer;
-		*/
-		Debug.Log (characterIndex + " spawned");
 	}
 }

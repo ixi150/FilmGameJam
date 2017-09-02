@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 114676266694048282}
   - component: {fileID: 114141559883027068}
   m_Layer: 9
-  m_Name: Rocket
+  m_Name: JanuszAltPrimaryFire
   m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -56,7 +56,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1706443206506946}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 1, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4933050586270112}
@@ -87,7 +87,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 2
+  m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -207,7 +207,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77ecab471ae932742b5fff9c3f02c499, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifetime: 15
+  lifetime: 3
 --- !u!114 &114238616416526538
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -233,11 +233,11 @@ MonoBehaviour:
   lifetime: 5
   destroyEffect: {fileID: 1651120351613216, guid: a2bb8f84786951946b599ebee5068b34,
     type: 2}
-  dmg: 10
-  lives: 0
+  dmg: 1
+  lives: 1
   destroyOnContact: 1
-  addShakeOnDestroy: 1
-  addShakeOnPlayerHit: 2
+  addShakeOnDestroy: 0.5
+  addShakeOnPlayerHit: 1.5
 --- !u!198 &198700869283626238
 ParticleSystem:
   m_ObjectHideFlags: 1
