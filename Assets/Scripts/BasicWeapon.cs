@@ -19,16 +19,10 @@ public class BasicWeapon : MonoBehaviour
 
     public AudioClip shootClip;
     AudioSource audioSource;
-	string FireButton;
-	public int buttonNumber;
+
+	public string FireButton;
 	void Start ()
     {
-		FireButton = "joystick 1 button " + buttonNumber;
-		if (!this.transform.parent.GetComponent<PlayerController> ().isFirstPlayer) {
-			FireButton = "joystick 2 button " + buttonNumber;
-		}
-
-
         audioSource = GetComponent<AudioSource>();
         audioSource.playOnAwake = false;
         audioSource.spatialBlend = 0.5f;
