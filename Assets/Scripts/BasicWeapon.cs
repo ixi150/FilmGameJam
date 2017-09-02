@@ -51,7 +51,7 @@ public class BasicWeapon : MonoBehaviour
 			instance.transform.GetComponent<PhysicsProjectile> ().SetOwner (transform.parent.GetComponent<PlayerController> ());
         }
 
-        CameraShaker.AddShake(cameraShakeAmplitude);
+        CameraShaker.AddShake(cameraShakeAmplitude,Camera.main.transform);
         audioSource.Play();
         timer = 1 / fireRate;
     }
