@@ -961,10 +961,7 @@ MonoBehaviour:
   - {fileID: 422332031}
   spritesY:
   - {fileID: 1845521410}
-  jumpButton: joystick 2 button 0
   specialWeapon: 0
-  horizontalAxis: Horizontal2
-  verticalAxis: Vertical2
   isFirstPlayer: 0
   timer: {fileID: 1667540317}
 --- !u!95 &715339893
@@ -1284,6 +1281,16 @@ Prefab:
       propertyPath: cameraShakeAmplitude
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 114985857817916522, guid: 5cd3d41e3b064dd4f9c17efdb2977f66,
+        type: 2}
+      propertyPath: buttonNumber
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114021412542273986, guid: 5cd3d41e3b064dd4f9c17efdb2977f66,
+        type: 2}
+      propertyPath: buttonNumber
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5cd3d41e3b064dd4f9c17efdb2977f66, type: 2}
   m_IsPrefabParent: 0
@@ -1491,6 +1498,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1102902488}
   - component: {fileID: 1102902487}
+  - component: {fileID: 1102902489}
   m_Layer: 0
   m_Name: ItemSpawner
   m_TagString: Untagged
@@ -1530,6 +1538,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1102902489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1102902486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6412f652f37327945ab38a15aeb4ec69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player1StartPos: {x: 0, y: 0}
+  player2StartPos: {x: 0, y: 0}
 --- !u!1 &1200481855
 GameObject:
   m_ObjectHideFlags: 0
@@ -1578,7 +1599,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a444288dcaaa9c34b9ee8ac778bbd58a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnMineButton: joystick 2 button 3
+  spawnMineButtonNumber: 3
   mine: {fileID: 1738270482401060, guid: 3299e5d7c5f50e848a0b8165a694f6e7, type: 2}
 --- !u!82 &1200481858
 AudioSource:
@@ -1682,7 +1703,7 @@ MonoBehaviour:
   shootForce: 20
   cameraShakeAmplitude: 1
   shootClip: {fileID: 8300000, guid: aeff529d31cf52b48a025b19c251c65f, type: 3}
-  FireButton: joystick 2 button 2
+  buttonNumber: 2
 --- !u!4 &1252171964 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4802924552791772, guid: 498cc74912041f04bb07fb8a76f3f124,

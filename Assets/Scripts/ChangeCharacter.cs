@@ -109,5 +109,7 @@ public class ChangeCharacter : MonoBehaviour {
 	void startGame() {
 		obj = Instantiate (rdy, rdy.transform.position, rdy.transform.rotation);
 		obj.transform.SetParent (canvas.transform, false);
+		GameObject.FindGameObjectWithTag ("Settings").GetComponent<PlayerSettings> ().pick1 = players[0].currChoice;
+		GameObject.FindGameObjectWithTag ("Settings").GetComponent<PlayerSettings> ().pick2 = players[1].currChoice;
 	}
 }
