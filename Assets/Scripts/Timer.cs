@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class Timer : MonoBehaviour {
 	public float startTime = 20f;
 	float timeLeft;
@@ -59,7 +59,9 @@ public class Timer : MonoBehaviour {
 			PlayerWon (Players.Player2);
 		else
 			PlayerWon (Players.None);
-	}
+
+		SceneManager.LoadScene (Application.loadedLevelName);
+		}
 
 	public void moveIndicator(bool isRight, float dmg) {
 		if (isRight)

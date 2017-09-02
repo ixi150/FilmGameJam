@@ -24,9 +24,10 @@ GameObject:
   - component: {fileID: 96645023253041204}
   - component: {fileID: 58554766350523834}
   - component: {fileID: 114676266694048282}
+  - component: {fileID: 114141559883027068}
   m_Layer: 9
-  m_Name: Projectile
-  m_TagString: Warp
+  m_Name: Rocket
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -55,7 +56,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1706443206506946}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.303, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4933050586270112}
@@ -68,7 +69,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1409665594009374}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.847, y: -3.0298, z: 0.111328125}
+  m_LocalPosition: {x: -0.9057635, y: -2.2667923, z: 0.111328125}
   m_LocalScale: {x: 0.99146676, y: 0.060290813, z: 1}
   m_Children:
   - {fileID: 4408368812466606}
@@ -86,7 +87,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 2
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -195,6 +196,18 @@ TrailRenderer:
     generateLightingData: 0
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
+--- !u!114 &114141559883027068
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1409665594009374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77ecab471ae932742b5fff9c3f02c499, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifetime: 15
 --- !u!114 &114238616416526538
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -217,9 +230,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d16d2d9fd78b1b44798fc20c4464a6ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifetime: 3
+  destroyOnContact: 1
   destroyEffect: {fileID: 1651120351613216, guid: a2bb8f84786951946b599ebee5068b34,
     type: 2}
+  addShakeOnDestroy: 1
+  addShakeOnPlayerHit: 2
+  lives: 0
+  dmg: 1
 --- !u!198 &198700869283626238
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -279,7 +296,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1310741507
+  randomSeed: 451165147
   InitialModule:
     serializedVersion: 3
     enabled: 1

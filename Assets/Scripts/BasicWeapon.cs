@@ -20,6 +20,7 @@ public class BasicWeapon : MonoBehaviour
     public AudioClip shootClip;
     AudioSource audioSource;
 
+	public string FireButton;
 	void Start ()
     {
         audioSource = GetComponent<AudioSource>();
@@ -32,7 +33,7 @@ public class BasicWeapon : MonoBehaviour
     {
         if (fireRate > 0)
         {
-            if (Input.GetButton("Fire1") && timer <= 0)
+			if (Input.GetKey(FireButton) && timer <= 0)
             {
                 Shoot();
             }
@@ -47,6 +48,7 @@ public class BasicWeapon : MonoBehaviour
             muzzle.localRotation = Quaternion.Euler(0, 0, Random.Range(-spread, spread));
             Rigidbody2D instance = Instantiate(projectile, muzzle.position, muzzle.rotation);
             instance.AddForce(muzzle.right * shootForce, ForceMode2D.Impulse);
+			instance.transform.GetComponent<PhysicsProjectile> ().SetOwner (transform.parent.GetComponent<PlayerController> ());
         }
 
         CameraShaker.AddShake(cameraShakeAmplitude);
