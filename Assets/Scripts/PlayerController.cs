@@ -19,6 +19,8 @@ public class PlayerController : MonoBehaviour
 
 	public string jumpButton;
 
+	public int specialWeapon = 0;
+
     float armAngle;
 
     Rigidbody2D rb;

@@ -236,6 +236,7 @@ MonoBehaviour:
     type: 2}
   addShakeOnDestroy: 0
   addShakeOnPlayerHit: 0
+  lives: 1
   dmg: 0
 --- !u!114 &114974522126045754
 MonoBehaviour:

@@ -2,53 +2,62 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PhysicsProjectile : MonoBehaviour
-{
-    public bool destroyOnContact = true;
-    public GameObject destroyEffect;
-    public float addShakeOnDestroy = 1.5f;
-    public float addShakeOnPlayerHit = 5.0f;
+	public class PhysicsProjectile : MonoBehaviour
+	{
+		public float lifetime = 5.0f;
+		public GameObject destroyEffect;
+		public float dmg = 1f;
+		float timer, extraTimer;
+		public int lives = 1;
+		public bool destroyOnContact = true;
+		public float addShakeOnDestroy = 1.5f;
+		public float addShakeOnPlayerHit = 2.0f;
+		PlayerController owner;
+		void Start ()
+		{
+			timer = lifetime;
 
-	public float dmg = 1f;
-	PlayerController owner;
-	void Start ()
-    {
-	}
-	
+		}
 
-    void OnTriggerEnter2D(Collider2D col)
-    {
-        if (col.transform.tag != "Projectile")
-        {
-            var player = col.GetComponent<PlayerController>();
-            if (player == owner)
-                return;
+		void Update ()
+		{
+			timer -= Time.deltaTime;
+			extraTimer += Time.deltaTime;
 
-            if (player)
-            {
-                player.DealDmg(dmg);
-                CameraShaker.AddShake(addShakeOnPlayerHit);
-            }
-            else
-            {
-                if (addShakeOnDestroy > 0)
-                    CameraShaker.AddShake(addShakeOnDestroy);
-                Destroy(gameObject);
-            }
+			if(timer <= 0)
+			{
+				Destroy(gameObject);
+			}
+		}
 
-            if (destroyOnContact)
-            {
-                if (destroyEffect != null)
-                {
-                    Instantiate(destroyEffect, transform.position, Quaternion.identity);
-                }
+		void OnTriggerEnter2D(Collider2D col)
+		{
+			var player = col.GetComponent<PlayerController> ();
+			if (player == owner && lifetime - timer < 0.5f)
+				return;
 
-            }
-        }
+			if (player) {
+				player.DealDmg (dmg);
+			}
+		if (extraTimer >= 0.5f && destroyOnContact) {
+				lives--;
+				extraTimer = 0;
+			}
+			if (lives <= 0) {
+				if (destroyEffect != null) {
+					Instantiate (destroyEffect, transform.position, Quaternion.identity);
+				}
+				Destroy (gameObject);
+			}
+		}
 
-    }
+		void OnCollisionEnter2D(Collision2D col) {
 
-	public void SetOwner(PlayerController control) {
-		owner = control;
-	}
+			OnTriggerEnter2D (col.collider);
+		}
+
+
+		public void SetOwner(PlayerController control) {
+			owner = control;
+		}
 }
