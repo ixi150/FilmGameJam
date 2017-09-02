@@ -233,7 +233,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1142337328884092}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.561, y: 0.071, z: 0}
+  m_LocalPosition: {x: 0.72, y: 0.071, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4451099385178532}
@@ -265,7 +265,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0.75
+  m_LinearDrag: 0.4
   m_AngularDrag: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 0}
@@ -285,8 +285,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.5}
-  m_Size: {x: 0.5, y: 1}
+  m_Offset: {x: -0.032975674, y: 0.6010721}
+  m_Size: {x: 0.30692148, y: 1.2021441}
   m_Direction: 0
 --- !u!82 &82395936574958822
 AudioSource:
@@ -403,8 +403,9 @@ MonoBehaviour:
   projectile: {fileID: 50897724267649916, guid: bdef682f247bd1c4584b126e513f46ab,
     type: 2}
   shootForce: 20
-  cameraShakeAmplitude: 5
+  cameraShakeAmplitude: 1
   shootClip: {fileID: 8300000, guid: aeff529d31cf52b48a025b19c251c65f, type: 3}
+  FireButton: joystick 1 button 1
 --- !u!114 &114491961418987860
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -430,13 +431,16 @@ MonoBehaviour:
   moveSpeed: 5
   jumpMultiplier: 1
   groundThreshold: 0.1
-  aimSpeed: 400
+  aimSpeed: 1000
   arm: {fileID: 4346072869265888}
   inputThreshold: 0.1
   spritesX:
   - {fileID: 1583691433075702}
   spritesY:
   - {fileID: 1274611284668948}
+  jumpButton: joystick 1 button 0
+  horizontalAxis: Horizontal
+  verticalAxis: Vertical
 --- !u!212 &212335766852982364
 SpriteRenderer:
   m_ObjectHideFlags: 1

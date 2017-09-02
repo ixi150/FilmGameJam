@@ -17,6 +17,8 @@ public class PlayerController : MonoBehaviour
     public GameObject[] spritesX;
     public GameObject[] spritesY;
 
+	public string jumpButton;
+
     float armAngle;
 
     Rigidbody2D rb;
@@ -25,6 +27,11 @@ public class PlayerController : MonoBehaviour
     float vertical;
 
     Animator animator;
+
+	public string horizontalAxis, verticalAxis;
+
+	public bool isFirstPlayer;
+	public GameObject timer;
 
     void Awake()
     {
@@ -42,8 +49,8 @@ public class PlayerController : MonoBehaviour
 
     void GetInput()
     {
-        horizontal = Input.GetAxis("Horizontal");
-        vertical = Input.GetAxis("Vertical");
+		horizontal = Input.GetAxis (horizontalAxis);
+		vertical = Input.GetAxis (verticalAxis);
     }
 
     void Move()
@@ -51,7 +58,7 @@ public class PlayerController : MonoBehaviour
         var velocity = rb.velocity;
         velocity.x = horizontal * moveSpeed;
 
-        if (Input.GetButtonDown("Jump") && Grounded())
+		if (Input.GetKeyDown(jumpButton) && Grounded())
         {
             velocity.y = jumpMultiplier * (-Physics2D.gravity.y * rb.mass);
         }
@@ -124,4 +131,11 @@ public class PlayerController : MonoBehaviour
         else
             return true;
     }
+
+	public void DealDmg(float ammount) {
+		if (isFirstPlayer) {
+			timer.GetComponent<Timer> ().moveIndicator (true, ammount);
+		}
+		else timer.GetComponent<Timer> ().moveIndicator (false, ammount);
+	}
 }
