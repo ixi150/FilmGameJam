@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+//using UnityEngine.UI;
+
 public class Timer : MonoBehaviour {
 	public float startTime = 20f;
 	float timeLeft;
@@ -23,7 +25,9 @@ public class Timer : MonoBehaviour {
 
 	public float dmgThreshold = 100f;
 	public enum Players {None, Player1, Player2};
-	// Use this for initialization
+    // Use this for initialization
+
+    public RectTransform guiHolder;
 
 	void Start () {
 		timeLeft = startTime;
@@ -82,6 +86,7 @@ public class Timer : MonoBehaviour {
 		float overKill = Mathf.Abs(indicator) + timeLeft/startTime * dmgThreshold - dmgThreshold;
 		timeLeft -= overKill;
 		indicator = Mathf.Abs (indicator) / indicator * (dmgThreshold - timeLeft/startTime*dmgThreshold);
+        CameraShaker.AddShake(overKill, guiHolder);
 
 	}
 

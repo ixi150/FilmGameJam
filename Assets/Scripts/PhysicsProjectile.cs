@@ -77,7 +77,7 @@ public class PhysicsProjectile : MonoBehaviour
                 Instantiate(destroyEffect, transform.position, Quaternion.identity);
             }
         }
-        CameraShaker.AddShake(shake);
+        CameraShaker.AddShake(shake,Camera.main.transform);
         Destroy(gameObject);
     }
 
