@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SpawnMine : MonoBehaviour {
-	public string spawnMineButton;
+	string spawnMineButton;
+	public int spawnMineNumber;
 	public GameObject mine;
 	// Use this for initialization
 	void Start () {
-		
+		if (transform.parent.GetComponent<PlayerController> ().isFirstPlayer) {
+			spawnMineButton = "joystick 1 button " + spawnMineNumber;
+		} else spawnMineButton = "joystick 2 button " + spawnMineNumber;
 	}
 	
 	// Update is called once per frame

@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Projectile
   - Warp
+  - Settings
+  - Timer
   layers:
   - Default
   - TransparentFX

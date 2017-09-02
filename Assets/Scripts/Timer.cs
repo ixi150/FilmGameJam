@@ -7,7 +7,8 @@ using UnityEngine.SceneManagement;
 public class Timer : MonoBehaviour {
 	public float startTime = 20f;
 	float timeLeft;
-
+	PlayerSettings settings;
+	GameObject sett;
 	public float TimeLeft {
 		get {
 			return timeLeft;
@@ -31,6 +32,8 @@ public class Timer : MonoBehaviour {
 
 	void Start () {
 		timeLeft = startTime;
+		sett = GameObject.FindGameObjectWithTag ("Settings");
+		settings = sett.GetComponent<PlayerSettings> ();
 	}
 	
 	// Update is called once per frame
@@ -64,7 +67,7 @@ public class Timer : MonoBehaviour {
 		else
 			PlayerWon (Players.None);
 
-		SceneManager.LoadScene (Application.loadedLevelName);
+		SceneManager.LoadScene ("Select");
 		}
 
 	public void moveIndicator(bool isRight, float dmg) {
@@ -97,9 +100,13 @@ public class Timer : MonoBehaviour {
 			break;
 		case Players.Player1:
 			Debug.Log ("Player 1 won!");
+			settings.player1score++;
+			settings.lastPlayerWon = 1;
 			break;
 		case Players.Player2:
 			Debug.Log ("Player 2 won!");
+			settings.player2score++;
+			settings.lastPlayerWon = 2;
 			break;
 		}
 	}

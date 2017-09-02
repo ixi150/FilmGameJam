@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
     public GameObject[] spritesX;
     public GameObject[] spritesY;
 
-	public string jumpButton;
+	string jumpButton;
 
 	public int specialWeapon = 0;
 
@@ -30,16 +30,28 @@ public class PlayerController : MonoBehaviour
 
     Animator animator;
 
-	public string horizontalAxis, verticalAxis;
+	string horizontalAxis, verticalAxis;
 
 	public bool isFirstPlayer;
-	public GameObject timer;
+	GameObject timer;
 
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponentInChildren<Animator>();
     }
+
+	void Start() {
+		timer = GameObject.FindGameObjectWithTag ("Timer");
+		horizontalAxis = "Horizontal";
+		verticalAxis = "Vertical";
+		jumpButton = "joystick 1 button 0";
+		if (!isFirstPlayer) {
+			jumpButton = "joystick 2 button 0";
+			horizontalAxis += "2";
+			verticalAxis += "2";
+		}
+	}
 
     void Update()
     {
