@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 50019713367255718}
   - component: {fileID: 61989423439235824}
   - component: {fileID: 114013933568265690}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Triangle 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 4663363575057228}
   - component: {fileID: 61723585740647874}
   - component: {fileID: 114864772515533392}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Crate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
