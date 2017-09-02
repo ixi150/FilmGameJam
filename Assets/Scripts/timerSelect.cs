@@ -5,8 +5,6 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class timerSelect : MonoBehaviour {
 	public float time = 5f;
-
-	
 	// Update is called once per frame
 	void Update () {
 		time -= Time.deltaTime;
