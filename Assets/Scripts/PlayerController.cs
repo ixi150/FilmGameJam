@@ -10,16 +10,17 @@ public class PlayerController : MonoBehaviour
     public float groundThreshold = 0.1f;
 
     public float aimSpeed = 5.0f;
-    public Transform arm;
+    public float headArc = 70;
+    public Transform arm, head;
 
     public float inputThreshold = 0.1f;
 
     public GameObject[] spritesX;
     public GameObject[] spritesY;
 
-	public string jumpButton;
+    public string jumpButton;
 
-	public int specialWeapon = 0;
+    public int specialWeapon = 0;
 
     float armAngle;
 
@@ -29,11 +30,12 @@ public class PlayerController : MonoBehaviour
     float vertical;
 
     Animator animator;
+    Vector2 lastInput = new Vector2(1, 0);
 
-	public string horizontalAxis, verticalAxis;
+    public string horizontalAxis, verticalAxis;
 
-	public bool isFirstPlayer;
-	public GameObject timer;
+    public bool isFirstPlayer;
+    public GameObject timer;
 
     void Awake()
     {
@@ -51,8 +53,8 @@ public class PlayerController : MonoBehaviour
 
     void GetInput()
     {
-		horizontal = Input.GetAxis (horizontalAxis);
-		vertical = Input.GetAxis (verticalAxis);
+        horizontal = Input.GetAxis(horizontalAxis);
+        vertical = Input.GetAxis(verticalAxis);
     }
 
     void Move()
@@ -60,7 +62,7 @@ public class PlayerController : MonoBehaviour
         var velocity = rb.velocity;
         velocity.x = horizontal * moveSpeed;
 
-		if (Input.GetKeyDown(jumpButton) && Grounded())
+        if (Input.GetKeyDown(jumpButton) && Grounded())
         {
             velocity.y = jumpMultiplier * (-Physics2D.gravity.y * rb.mass);
         }
@@ -69,14 +71,28 @@ public class PlayerController : MonoBehaviour
 
     void Aim()
     {
+        var isRightSided = RightSided(armAngle);
         if (InputIsActive())
         {
-            var direction = new Vector2(horizontal, vertical);
-            armAngle = (Mathf.Atan2(direction.y, direction.x) * 180.0f / Mathf.PI);
-            arm.rotation = Quaternion.RotateTowards(arm.rotation, Quaternion.Euler(0, 0, armAngle), aimSpeed * Time.deltaTime);
+            UpdateLastInput();
         }
+        var direction = lastInput;
+        armAngle = (Mathf.Atan2(direction.y, direction.x) * 180.0f / Mathf.PI);
+        arm.rotation = Quaternion.RotateTowards(arm.rotation, Quaternion.Euler(0, 0, armAngle), aimSpeed * Time.deltaTime);
+        
+        var headRotation = Quaternion.Euler(0, 0, armAngle).eulerAngles.z;
+        if (isRightSided)
+        {
+            headRotation = headRotation < 180 ?
+                Mathf.Clamp(headRotation, 0, headArc / 2) :
+                Mathf.Clamp(headRotation, 360 - headArc / 2, 360);
+        }
+        else
+        {
+            headRotation = Mathf.Clamp(headRotation, 180 - headArc / 2, 180 + headArc / 2);
+        }
+        head.rotation = Quaternion.RotateTowards(head.rotation, Quaternion.Euler(0, 0, headRotation), aimSpeed * Time.deltaTime / 3);
 
-        var isRightSided = RightSided(armAngle);
         float scaleFactor = isRightSided ? 1 : -1;
         foreach (var sprite in spritesX)
         {
@@ -91,7 +107,12 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    void UpdateAnimator ()
+    void UpdateLastInput()
+    {
+        lastInput = new Vector2(horizontal, vertical);
+    }
+
+    void UpdateAnimator()
     {
         animator.SetFloat("Horizontal", Mathf.Abs(horizontal));
         animator.SetFloat("Vertical", rb.velocity.y);
@@ -134,10 +155,12 @@ public class PlayerController : MonoBehaviour
             return true;
     }
 
-	public void DealDmg(float ammount) {
-		if (isFirstPlayer) {
-			timer.GetComponent<Timer> ().moveIndicator (true, ammount);
-		}
-		else timer.GetComponent<Timer> ().moveIndicator (false, ammount);
-	}
+    public void DealDmg(float ammount)
+    {
+        if (isFirstPlayer)
+        {
+            timer.GetComponent<Timer>().moveIndicator(true, ammount);
+        }
+        else timer.GetComponent<Timer>().moveIndicator(false, ammount);
+    }
 }
