@@ -10,7 +10,6 @@ public class CameraShaker : MonoBehaviour
     public float shakeDecay = 5.0f;
 
     float currentAmplitude;
-    Vector2 shake;
 
     void Start ()
     {
@@ -28,8 +27,6 @@ public class CameraShaker : MonoBehaviour
 
             bx *= currentAmplitude;
             by *= currentAmplitude;
-
-            shake = new Vector2(bx, by);
 
             transform.localPosition = new Vector3(bx, by, -1);
         }
