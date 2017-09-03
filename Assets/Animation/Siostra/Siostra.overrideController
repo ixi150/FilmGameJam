@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Siostra
+  m_Controller: {fileID: 9100000, guid: 895d6e003c270ab46a11b57160648229, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 88871133196e74348a96967c86fcebf5, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: f9288a503174929419ed62199add0e29, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 63d1795c797e02c4dabccdc96d42b2e5, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 994a5e9c6f8e2774a84ca349419b6351, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: b0026c7fb3bfa7b48939f8ba6c7f4eb0, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 4d59ceffb29d5594389ccf9bef16a096, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: d3f47b64858040245924589aaa8ab4f9, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 79c524cda1854204498d6a365196f862, type: 2}

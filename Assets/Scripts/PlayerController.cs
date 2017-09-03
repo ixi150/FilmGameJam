@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
 
     public float aimSpeed = 5.0f;
     public float headArc = 70;
-    public Transform arm, head;
+    public Transform arm, arm2, head;
 
     public float inputThreshold = 0.1f;
 
@@ -90,7 +90,8 @@ public class PlayerController : MonoBehaviour
         var direction = lastInput;
         armAngle = (Mathf.Atan2(direction.y, direction.x) * 180.0f / Mathf.PI);
         arm.rotation = Quaternion.RotateTowards(arm.rotation, Quaternion.Euler(0, 0, armAngle), aimSpeed * Time.deltaTime);
-        
+        if (arm2) arm2.rotation = Quaternion.RotateTowards(arm2.rotation, Quaternion.Euler(0, 0, armAngle), aimSpeed * Time.deltaTime * .9f);
+
         var headRotation = Quaternion.Euler(0, 0, armAngle).eulerAngles.z;
         if (isRightSided)
         {
@@ -102,7 +103,7 @@ public class PlayerController : MonoBehaviour
         {
             headRotation = Mathf.Clamp(headRotation, 180 - headArc / 2, 180 + headArc / 2);
         }
-        head.rotation = Quaternion.RotateTowards(head.rotation, Quaternion.Euler(0, 0, headRotation), aimSpeed * Time.deltaTime / 3);
+        head.rotation = Quaternion.RotateTowards(head.rotation, Quaternion.Euler(0, 0, headRotation), aimSpeed * Time.deltaTime * 2);
 
         float scaleFactor = isRightSided ? 1 : -1;
         foreach (var sprite in spritesX)
