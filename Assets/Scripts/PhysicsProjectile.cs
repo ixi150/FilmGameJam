@@ -12,7 +12,10 @@ public class PhysicsProjectile : MonoBehaviour
     public bool destroyOnContact = true;
     public float addShakeOnDestroy = 1.5f;
     public float addShakeOnPlayerHit = 2.0f;
+	public float extraTimerTreshold=0;
+
     PlayerController owner;
+
 	void Start()
     {
         timer = lifetime;
@@ -41,7 +44,7 @@ public class PhysicsProjectile : MonoBehaviour
             player.DealDmg(dmg);
         }
 
-        if (extraTimer >= 0.5f && destroyOnContact)
+		if (extraTimer >=extraTimerTreshold && destroyOnContact)
         {
 			Debug.Log (lives);            
 			lives--;

@@ -14,7 +14,7 @@ public class PlayerScoring : MonoBehaviour {
 		p1score.GetComponent<Text> ().text = "" + settings.player1score;
 		p2score.GetComponent<Text> ().text = "" + settings.player2score;
 		if (settings.lastPlayerWon != 0)
-			last.GetComponent<Text> ().text = "Last won: Player " + settings.lastPlayerWon;
+			last.GetComponent<Text> ().text = "Ostatnio wygroł chop " + settings.lastPlayerWon;
 		else
 			last.GetComponent<Text> ().text = "";
 

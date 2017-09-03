@@ -147,7 +147,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dmg: 10
   gracePeriod: 1
-  destroyEffect: {fileID: 1651120351613216, guid: a2bb8f84786951946b599ebee5068b34,
+  destroyEffect: {fileID: 1563283408919700, guid: fbbef8efee459bd4b89b179fad81b3e6,
     type: 2}
   destroyAfterTime: 10
 --- !u!212 &212867161407444504

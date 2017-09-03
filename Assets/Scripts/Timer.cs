@@ -106,12 +106,12 @@ public class Timer : MonoBehaviour {
 			endText.GetComponent<Text>().text = "REMIZ!";
 			break;
 		case Players.Player1:
-			endText.GetComponent<Text> ().text = "Wygrywa gracz nr 1!";
+			endText.GetComponent<Text> ().text = "Pierwszorzędny grocz wygroł!";
 			settings.player1score++;
 			settings.lastPlayerWon = 1;
 			break;
 		case Players.Player2:
-			endText.GetComponent<Text>().text = "Wygrywa gracz nr 2!";
+			endText.GetComponent<Text>().text = "Wygroł grocz drugoplanowy!";
 			settings.player2score++;
 			settings.lastPlayerWon = 2;
 			break;
