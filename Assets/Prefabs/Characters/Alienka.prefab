@@ -71,6 +71,7 @@ GameObject:
   - component: {fileID: 70526644005273988}
   - component: {fileID: 50642504628609364}
   - component: {fileID: 114365119564709620}
+  - component: {fileID: 114986829791259258}
   m_Layer: 8
   m_Name: Alienka
   m_TagString: Player
@@ -407,12 +408,8 @@ MonoBehaviour:
   - {fileID: 1019687211335588}
   spritesY:
   - {fileID: 1842998139376044}
-  jumpButton: joystick 2 button 0
   specialWeapon: 0
-  horizontalAxis: Horizontal2
-  verticalAxis: Vertical2
   isFirstPlayer: 0
-  timer: {fileID: 0}
 --- !u!114 &114365119564709620
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -432,11 +429,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1914399999650186}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39eda939dae1c7b47aa894246fdf91d4, type: 3}
+  m_Script: {fileID: 11500000, guid: a444288dcaaa9c34b9ee8ac778bbd58a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnMineButton: joystick 2 button 3
-  mine: {fileID: 1738270482401060, guid: d5d044c1d3a913743ab129bca062e636, type: 2}
+  spawnMineNumber: 3
+  mine: {fileID: 1738270482401060, guid: 3299e5d7c5f50e848a0b8165a694f6e7, type: 2}
 --- !u!114 &114884939065793160
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -457,7 +454,21 @@ MonoBehaviour:
   shootForce: 20
   cameraShakeAmplitude: 1
   shootClip: {fileID: 8300000, guid: aeff529d31cf52b48a025b19c251c65f, type: 3}
-  FireButton: joystick 2 button 2
+  FireButtonNumber: 2
+--- !u!114 &114986829791259258
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1306538520712596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a932e2bdddd5c14699c3ee3a79590fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyNumber: 1
+  specials: []
+  muzzle: {fileID: 4087883731762240}
 --- !u!212 &212046110634239268
 SpriteRenderer:
   m_ObjectHideFlags: 1

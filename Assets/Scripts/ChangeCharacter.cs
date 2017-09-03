@@ -47,6 +47,7 @@ public class ChangeCharacter : MonoBehaviour {
 	void Start() {
 		sett = GameObject.FindGameObjectWithTag ("Settings");
 		settings = sett.GetComponent<PlayerSettings> ();
+		Time.timeScale = 1;
 	}
 
 
