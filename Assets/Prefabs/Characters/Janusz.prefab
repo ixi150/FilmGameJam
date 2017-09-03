@@ -400,14 +400,13 @@ MonoBehaviour:
   fireRate: 0.5
   spread: 1
   shootAmount: 1
-  lives: 1
   muzzle: {fileID: 4504846301976298}
   projectile: {fileID: 50897724267649916, guid: 10e9f9714a7c82344955f21c59b77e29,
     type: 2}
   shootForce: 8
   cameraShakeAmplitude: 0
   shootClip: {fileID: 8300000, guid: aeff529d31cf52b48a025b19c251c65f, type: 3}
-  FireButton: joystick 1 button 2
+  FireButtonNumber: 3
 --- !u!114 &114412615277848030
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -440,11 +439,8 @@ MonoBehaviour:
   - {fileID: 1410191908405762}
   spritesY:
   - {fileID: 1456864461471262}
-  jumpButton: joystick 1 button 0
-  horizontalAxis: Horizontal
-  verticalAxis: Vertical
+  specialWeapon: 0
   isFirstPlayer: 1
-  timer: {fileID: 0}
 --- !u!114 &114985857817916522
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -459,14 +455,13 @@ MonoBehaviour:
   fireRate: 2
   spread: 5
   shootAmount: 1
-  lives: 1
   muzzle: {fileID: 4504846301976298}
   projectile: {fileID: 50897724267649916, guid: bdef682f247bd1c4584b126e513f46ab,
     type: 2}
   shootForce: 10
   cameraShakeAmplitude: 1
   shootClip: {fileID: 8300000, guid: aeff529d31cf52b48a025b19c251c65f, type: 3}
-  FireButton: joystick 1 button 1
+  FireButtonNumber: 2
 --- !u!212 &212000807055746652
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -28,7 +28,7 @@ public class BasicWeapon : MonoBehaviour
         audioSource.playOnAwake = false;
         audioSource.spatialBlend = 0.5f;
         audioSource.clip = shootClip;
-		if (transform.parent.GetComponent<PlayerController> ().isFirstPlayer) {
+		if (transform.parent.GetComponentInParent<PlayerController> ().isFirstPlayer) {
 			FireButton = "joystick 1 button " + FireButtonNumber;
 		} else FireButton = "joystick 2 button " + FireButtonNumber;
 
@@ -38,7 +38,7 @@ public class BasicWeapon : MonoBehaviour
     {
         if (fireRate > 0)
         {
-			if (Input.GetKey(FireButton) && timer <= 0)
+			if (Input.GetKeyDown(FireButton) && timer <= 0)
             {
                 Shoot();
             }
