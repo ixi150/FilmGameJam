@@ -22,7 +22,8 @@ public class SpecialAbility : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetKeyDown (key) && control.specialWeapon != 0) {
-			Instantiate (specials [control.specialWeapon], muzzle.position, muzzle.rotation);
+			Instantiate (specials [control.specialWeapon - 1], muzzle.position, muzzle.rotation);
+			control.specialWeapon = 0;
 		}
 
 	}

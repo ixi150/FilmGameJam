@@ -22,6 +22,7 @@ public class SpawnMine : MonoBehaviour {
 		timer += Time.deltaTime;
 			if (timer >= cooldown)
 				canShoot = true;
+			timer = 0f;
 			}
 		if (Input.GetKeyDown (spawnMineButton) && canShoot) {
 			Instantiate (mine, this.transform.position, Quaternion.identity);

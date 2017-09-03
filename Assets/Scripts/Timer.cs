@@ -46,7 +46,7 @@ public class Timer : MonoBehaviour {
 				timeStart = true;
 			}
 
-		if (timeStart)
+		if (timeStart&& timeLeft > 0)
 		DecreaseTime ();
 		
 		if (timeLeft < 0)

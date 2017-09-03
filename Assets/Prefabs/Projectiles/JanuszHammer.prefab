@@ -104,7 +104,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 6200000, guid: 02282fe27b3e85545b0e18a99e92dbda, type: 2}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -147,7 +147,7 @@ MonoBehaviour:
   lifetime: 5
   destroyEffect: {fileID: 1651120351613216, guid: a2bb8f84786951946b599ebee5068b34,
     type: 2}
-  dmg: 5
+  dmg: 10
   lives: 1
   destroyOnContact: 1
   addShakeOnDestroy: 0
