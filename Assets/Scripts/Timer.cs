@@ -106,15 +106,15 @@ public class Timer : MonoBehaviour {
 		void PlayerWon(Players playerWon) {  ///WIP, will be in a different obj
 		switch (playerWon) {
 		case Players.None:
-			endText.GetComponent<Text>().text = "WASTED";
+			endText.GetComponent<Text>().text = "REMIZ(A)";
 			break;
 		case Players.Player1:
-			endText.GetComponent<Text>().text = "Player 1 WON!";
+			endText.GetComponent<Text>().text = "Jedynka rozjebał!";
 			settings.player1score++;
 			settings.lastPlayerWon = 1;
 			break;
 		case Players.Player2:
-			endText.GetComponent<Text>().text = "Player 2 WON!";
+			endText.GetComponent<Text>().text = "Dwójka rozjebał!";
 			settings.player2score++;
 			settings.lastPlayerWon = 2;
 			break;

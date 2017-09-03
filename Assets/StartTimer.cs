@@ -17,16 +17,13 @@ public class StartTimer : MonoBehaviour {
 		timer = startTime;
 		foreach (var player in GameObject.FindObjectsOfType<PlayerController>())
 			player.enabled = false;
-
-		foreach (var pl in GameObject.FindObjectsOfType<Animator>())
-			pl.enabled = false;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		timer -= Time.deltaTime;
 		if (timer <= 0 ) {
-			foreach (var pl in GameObject.FindObjectsOfType<Animator>())
+			foreach (var pl in GameObject.FindObjectsOfType<PlayerController>())
 				pl.enabled = true;
 
 			Destroy (gameObject);
