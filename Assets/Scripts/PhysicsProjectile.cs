@@ -29,15 +29,6 @@ public class PhysicsProjectile : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    /*if (player)
-    {
-        player.DealDmg(dmg);
-        DestroyThisAndAddShake(addShakeOnPlayerHit);
-    }
-    else
-    {
-        DestroyThisAndAddShake(addShakeOnDestroy);
-    }     */
 
     void OnTriggerEnter2D(Collider2D col)
     {
@@ -48,7 +39,13 @@ public class PhysicsProjectile : MonoBehaviour
         if (player)
         {
             player.DealDmg(dmg);
+            DestroyThisAndAddShake(addShakeOnPlayerHit);
         }
+        else
+        {
+            DestroyThisAndAddShake(addShakeOnDestroy);
+        }
+
         if (extraTimer >= 0.5f && destroyOnContact)
         {
             lives--;
@@ -64,10 +61,6 @@ public class PhysicsProjectile : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter2D(Collision2D col)
-    {
-    }
-
     void DestroyThisAndAddShake(float shake)
     {
         if (destroyOnContact)
@@ -75,10 +68,11 @@ public class PhysicsProjectile : MonoBehaviour
             if (destroyEffect != null)
             {
                 Instantiate(destroyEffect, transform.position, Quaternion.identity);
+                CameraShaker.AddShake(shake, Camera.main.transform);
+                Destroy(gameObject);
             }
+
         }
-        CameraShaker.AddShake(shake,Camera.main.transform);
-        Destroy(gameObject);
     }
 
 
