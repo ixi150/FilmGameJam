@@ -100,7 +100,7 @@ GameObject:
   - component: {fileID: 4278140036772628}
   - component: {fileID: 114867890777233312}
   - component: {fileID: 82839778032209980}
-  - component: {fileID: 114893563113038182}
+  - component: {fileID: 114759709153107630}
   m_Layer: 8
   m_Name: Arm
   m_TagString: Untagged
@@ -255,8 +255,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1526063523476790}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.4900007, y: -1.8699999, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 5.1768265, y: -1.5613661, z: 0}
+  m_LocalScale: {x: 1.1, y: 1.1, z: 1}
   m_Children:
   - {fileID: 4195346938756084}
   m_Father: {fileID: 0}
@@ -486,6 +486,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e165c3e7b69cb14c99d8b392c34f242, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114759709153107630
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1359524408875502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e60cd70c62341a4cb4961fa7e532d31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireRate: 0.5
+  spread: 1
+  shootAmount: 1
+  muzzle: {fileID: 4306909229569990}
+  projectile: {fileID: 50897724267649916, guid: 15632b36ba36203479c5254f94cae2d8,
+    type: 2}
+  shootForce: 8
+  cameraShakeAmplitude: 0.5
+  shootClip: {fileID: 8300000, guid: aeff529d31cf52b48a025b19c251c65f, type: 3}
+  FireButtonNumber: 3
 --- !u!114 &114774212056385726
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -516,8 +537,7 @@ MonoBehaviour:
   specialWeapon: 0
   horizontalAxis: Horizontal
   verticalAxis: Vertical
-  isFirstPlayer: 0
-  timer: {fileID: 0}
+  isFirstPlayer: 1
 --- !u!114 &114867890777233312
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -530,26 +550,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireRate: 2
-  spread: 20
-  shootAmount: 5
+  spread: 5
+  shootAmount: 1
   muzzle: {fileID: 4306909229569990}
   projectile: {fileID: 50897724267649916, guid: bdef682f247bd1c4584b126e513f46ab,
     type: 2}
-  shootForce: 20
+  shootForce: 10
   cameraShakeAmplitude: 1
   shootClip: {fileID: 8300000, guid: aeff529d31cf52b48a025b19c251c65f, type: 3}
-  FireButton: i
---- !u!114 &114893563113038182
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1359524408875502}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  FireButtonNumber: 2
 --- !u!212 &212110337497508000
 SpriteRenderer:
   m_ObjectHideFlags: 1

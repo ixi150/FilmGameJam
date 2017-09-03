@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour
     public string horizontalAxis, verticalAxis;
 
     public bool isFirstPlayer;
-    public GameObject timer;
+    GameObject timer;
 
     void Awake()
     {
@@ -43,7 +43,7 @@ public class PlayerController : MonoBehaviour
     }
 
 	void Start() {
-		timer = GameObject.FindGameObjectWithTag ("Timer");
+		timer = GameObject.FindObjectOfType<Timer> ().gameObject;
 		horizontalAxis = "Horizontal";
 		verticalAxis = "Vertical";
 		jumpButton = "joystick 1 button 0";

@@ -252,7 +252,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1408231905863518}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.4900007, y: -1.8699999, z: 0}
+  m_LocalPosition: {x: 5.2924433, y: -1.6577134, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4662205127468902}
@@ -486,16 +486,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e60cd70c62341a4cb4961fa7e532d31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireRate: 2
-  spread: 20
-  shootAmount: 5
+  fireRate: 1
+  spread: 5
+  shootAmount: 1
   muzzle: {fileID: 4371575770295142}
   projectile: {fileID: 50897724267649916, guid: bdef682f247bd1c4584b126e513f46ab,
     type: 2}
   shootForce: 20
   cameraShakeAmplitude: 1
   shootClip: {fileID: 8300000, guid: aeff529d31cf52b48a025b19c251c65f, type: 3}
-  FireButton: i
+  FireButtonNumber: 2
 --- !u!114 &114076688417383974
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -537,8 +537,7 @@ MonoBehaviour:
   specialWeapon: 0
   horizontalAxis: Horizontal
   verticalAxis: Vertical
-  isFirstPlayer: 0
-  timer: {fileID: 0}
+  isFirstPlayer: 1
 --- !u!114 &114622811215366352
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -547,9 +546,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1896302271668832}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: a444288dcaaa9c34b9ee8ac778bbd58a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnMineNumber: 3
+  mine: {fileID: 1738270482401060, guid: 3299e5d7c5f50e848a0b8165a694f6e7, type: 2}
+  cooldown: 1
 --- !u!212 &212215890086100016
 SpriteRenderer:
   m_ObjectHideFlags: 1
