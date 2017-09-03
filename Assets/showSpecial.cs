@@ -4,34 +4,19 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class showSpecial : MonoBehaviour {
-	int special;
-	int internalSpecial;
-	GameObject player;
-	public bool isFirstPlayer;
-	PlayerController control;
-	public Sprite images;
+	public Sprite[] charSprites;
+	public bool isPlayerOne;
+	PlayerSettings settings;
+	GameObject sett;
 	// Use this for initialization
 	void Start () {
-		internalSpecial = special;
-
-		GameObject[] obj = GameObject.FindGameObjectsWithTag ("Player");
-
-		foreach (GameObject o in obj) {
-			if (o.GetComponent<PlayerController> ().isFirstPlayer == isFirstPlayer) {
-				player = o;
-				control = o.GetComponent<PlayerController> ();
-			}
-		}
-
+		sett = GameObject.FindGameObjectWithTag ("Settings");
+		settings = sett.GetComponent<PlayerSettings> ();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		special = control.specialWeapon;
-		if (special != internalSpecial) {
-			transform.GetComponent<Image> ().sprite = images;
-			internalSpecial = special;
-
-		}
+	void Update() {
+		if (isPlayerOne)
+			GetComponent<Image> ().sprite = charSprites [settings.charChoice1-1];
+		else GetComponent<Image> ().sprite = charSprites [settings.charChoice2-1];
+			
 	}
 }

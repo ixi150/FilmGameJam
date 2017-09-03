@@ -35,7 +35,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4125801783347664}
   - component: {fileID: 212351500730187696}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: head sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -168,7 +168,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4877285664492940}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: alien_head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -533,12 +533,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireRate: 25
-  spread: 10
-  shootAmount: 2
+  spread: 1
+  shootAmount: 1
   muzzle: {fileID: 4027936213931508}
   projectile: {fileID: 50897724267649916, guid: c53f40931d5dc574cade69217fd9006d,
     type: 2}
-  shootForce: 5
+  shootForce: 15
   cameraShakeAmplitude: 1
   shootClip: {fileID: 8300000, guid: aeff529d31cf52b48a025b19c251c65f, type: 3}
   FireButtonNumber: 2
@@ -598,13 +598,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e60cd70c62341a4cb4961fa7e532d31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireRate: 0.5
-  spread: 1
-  shootAmount: 1
+  fireRate: 1
+  spread: 2
+  shootAmount: 3
   muzzle: {fileID: 4027936213931508}
-  projectile: {fileID: 50897724267649916, guid: 1ba3bd790a6c75140a200d0e301eb538,
+  projectile: {fileID: 50897724267649916, guid: bdef682f247bd1c4584b126e513f46ab,
     type: 2}
-  shootForce: 10
+  shootForce: 15
   cameraShakeAmplitude: 0
   shootClip: {fileID: 0}
   FireButtonNumber: 3

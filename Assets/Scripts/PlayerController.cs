@@ -171,12 +171,9 @@ public class PlayerController : MonoBehaviour
     {
         if (isFirstPlayer)
         {
-            timer.GetComponent<Timer>().moveIndicator(true, ammount);
+            timer.GetComponent<Timer>().moveIndicator(false, ammount);
         }
-        else timer.GetComponent<Timer>().moveIndicator(false, ammount);
+        else timer.GetComponent<Timer>().moveIndicator(true, ammount);
     }
-
-	void FlashYourChara() {
-
-	}
+		
 }

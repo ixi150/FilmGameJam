@@ -402,13 +402,19 @@ MonoBehaviour:
   jumpMultiplier: 1
   groundThreshold: 0.1
   aimSpeed: 1000
+  headArc: 70
   arm: {fileID: 4413576640985708}
+  arm2: {fileID: 0}
+  head: {fileID: 0}
   inputThreshold: 0.1
   spritesX:
   - {fileID: 1019687211335588}
   spritesY:
   - {fileID: 1842998139376044}
+  jumpButton: 
   specialWeapon: 0
+  horizontalAxis: 
+  verticalAxis: 
   isFirstPlayer: 0
 --- !u!114 &114365119564709620
 MonoBehaviour:
@@ -434,6 +440,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnMineNumber: 3
   mine: {fileID: 1738270482401060, guid: 3299e5d7c5f50e848a0b8165a694f6e7, type: 2}
+  cooldown: 1
 --- !u!114 &114650433753313342
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -446,6 +453,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyNumber: 1
+  shootForce: 0
   specials: []
   muzzle: {fileID: 0}
 --- !u!114 &114884939065793160

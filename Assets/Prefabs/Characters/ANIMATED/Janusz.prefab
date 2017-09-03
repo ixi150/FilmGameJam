@@ -116,7 +116,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4176083867529088}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: alien_head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -168,7 +168,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4478577854618976}
   - component: {fileID: 212266217873509392}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: head sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -520,7 +520,7 @@ MonoBehaviour:
   muzzle: {fileID: 4306909229569990}
   projectile: {fileID: 50897724267649916, guid: 15632b36ba36203479c5254f94cae2d8,
     type: 2}
-  shootForce: 8
+  shootForce: 30
   cameraShakeAmplitude: 0.5
   shootClip: {fileID: 8300000, guid: aeff529d31cf52b48a025b19c251c65f, type: 3}
   FireButtonNumber: 3
@@ -536,7 +536,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  jumpMultiplier: 0.5
+  jumpMultiplier: 0.7
   groundThreshold: 0.1
   aimSpeed: 1000
   headArc: 70

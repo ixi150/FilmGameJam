@@ -434,13 +434,19 @@ MonoBehaviour:
   jumpMultiplier: 0.5
   groundThreshold: 0.1
   aimSpeed: 1000
+  headArc: 70
   arm: {fileID: 4497360490220182}
+  arm2: {fileID: 0}
+  head: {fileID: 0}
   inputThreshold: 0.1
   spritesX:
   - {fileID: 1410191908405762}
   spritesY:
   - {fileID: 1456864461471262}
+  jumpButton: 
   specialWeapon: 0
+  horizontalAxis: 
+  verticalAxis: 
   isFirstPlayer: 1
 --- !u!114 &114719667835560118
 MonoBehaviour:
@@ -454,6 +460,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyNumber: 0
+  shootForce: 0
   specials: []
   muzzle: {fileID: 0}
 --- !u!114 &114985857817916522

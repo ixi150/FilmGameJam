@@ -11,7 +11,6 @@ public class ParticleDamage : MonoBehaviour
         if(other.tag == "Player")
         {
             other.GetComponent<PlayerController>().DealDmg(damage);
-			CameraShaker.AddShake (screenShakeOnHit, Camera.main.transform);
         }
     }
 
