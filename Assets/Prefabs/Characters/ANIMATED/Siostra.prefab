@@ -52,7 +52,7 @@ GameObject:
   - component: {fileID: 4650137731850084}
   - component: {fileID: 114496318489067860}
   - component: {fileID: 82309387936118862}
-  - component: {fileID: 114531695144554784}
+  - component: {fileID: 114903058000559646}
   m_Layer: 8
   m_Name: Arm
   m_TagString: Untagged
@@ -73,6 +73,7 @@ GameObject:
   - component: {fileID: 70939696728950674}
   - component: {fileID: 50926686971293638}
   - component: {fileID: 114750791139513798}
+  - component: {fileID: 114065934206667836}
   m_Layer: 8
   m_Name: Siostra
   m_TagString: Player
@@ -504,6 +505,22 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114065934206667836
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1213182560585360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a932e2bdddd5c14699c3ee3a79590fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyNumber: 1
+  shootForce: 5
+  specials:
+  - {fileID: 1409665594009374, guid: e8fa4cd613671f74b82a08f1f2ac102d, type: 2}
+  muzzle: {fileID: 4027936213931508}
 --- !u!114 &114496318489067860
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -515,16 +532,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e60cd70c62341a4cb4961fa7e532d31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireRate: 2
-  spread: 20
-  shootAmount: 5
+  fireRate: 25
+  spread: 10
+  shootAmount: 2
   muzzle: {fileID: 4027936213931508}
-  projectile: {fileID: 50897724267649916, guid: bdef682f247bd1c4584b126e513f46ab,
+  projectile: {fileID: 50897724267649916, guid: c53f40931d5dc574cade69217fd9006d,
     type: 2}
-  shootForce: 20
+  shootForce: 5
   cameraShakeAmplitude: 1
   shootClip: {fileID: 8300000, guid: aeff529d31cf52b48a025b19c251c65f, type: 3}
-  FireButton: i
+  FireButtonNumber: 2
 --- !u!114 &114524511717144044
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -559,18 +576,6 @@ MonoBehaviour:
   horizontalAxis: Horizontal
   verticalAxis: Vertical
   isFirstPlayer: 0
-  timer: {fileID: 0}
---- !u!114 &114531695144554784
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1123442851777184}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114750791139513798
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -582,6 +587,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e165c3e7b69cb14c99d8b392c34f242, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114903058000559646
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1123442851777184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e60cd70c62341a4cb4961fa7e532d31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireRate: 0.5
+  spread: 1
+  shootAmount: 1
+  muzzle: {fileID: 4027936213931508}
+  projectile: {fileID: 50897724267649916, guid: 1ba3bd790a6c75140a200d0e301eb538,
+    type: 2}
+  shootForce: 10
+  cameraShakeAmplitude: 0
+  shootClip: {fileID: 0}
+  FireButtonNumber: 3
 --- !u!212 &212006146457772768
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -175,4 +175,8 @@ public class PlayerController : MonoBehaviour
         }
         else timer.GetComponent<Timer>().moveIndicator(false, ammount);
     }
+
+	void FlashYourChara() {
+
+	}
 }

@@ -499,6 +499,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyNumber: 1
+  shootForce: 5
   specials:
   - {fileID: 1409665594009374, guid: e8fa4cd613671f74b82a08f1f2ac102d, type: 2}
   muzzle: {fileID: 4306909229569990}
@@ -540,6 +541,7 @@ MonoBehaviour:
   aimSpeed: 1000
   headArc: 70
   arm: {fileID: 4187166119396098}
+  arm2: {fileID: 0}
   head: {fileID: 4478577854618976}
   inputThreshold: 0.1
   spritesX:

@@ -243,10 +243,10 @@ MonoBehaviour:
   spawnP1Location: {x: -3, y: 2}
   spawnP2Location: {x: 2, y: 3}
   charPrefabs:
-  - {fileID: 1928123269577430, guid: 1c3188fb56b297c41bf156ed6ffda0c3, type: 2}
+  - {fileID: 1526063523476790, guid: ea0df342d3f883f4ab086ecc25c19e35, type: 2}
   - {fileID: 1526063523476790, guid: f52f040af02ea88479eb6f79012488b4, type: 2}
-  - {fileID: 1306538520712596, guid: 40048f766a7abe64a84dad1963aeca1a, type: 2}
-  - {fileID: 1306538520712596, guid: 40048f766a7abe64a84dad1963aeca1a, type: 2}
+  - {fileID: 1408231905863518, guid: d1a9a4595aebf98488f337e815629dd1, type: 2}
+  - {fileID: 1213182560585360, guid: e496faed90f0948459080c903aefcef1, type: 2}
 --- !u!1 &308824061
 GameObject:
   m_ObjectHideFlags: 0
@@ -959,9 +959,10 @@ Transform:
   - {fileID: 1767663554}
   - {fileID: 2039884112}
   - {fileID: 674801664}
-  - {fileID: 1063219723}
+  - {fileID: 1062285164}
   - {fileID: 692528040}
   - {fileID: 983399508}
+  - {fileID: 1161555641}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1261,7 +1262,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 751029027}
-  m_RootOrder: 1
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!251 &1062285165
 PlatformEffector2D:
@@ -1397,7 +1398,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 751029027}
-  m_RootOrder: 4
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1161555642
 MonoBehaviour:
@@ -2164,7 +2165,7 @@ MonoBehaviour:
   TestIndicatorLeft: 0
   dmgThreshold: 100
   guiHolder: {fileID: 2126257951}
-  fadeInSpeed: 0.4
+  fadeInSpeed: 5
 --- !u!224 &1667540319
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2390,7 +2391,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1388554664515208, guid: edead02548e17c744a9b19affd4c2c6f, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: edead02548e17c744a9b19affd4c2c6f, type: 2}
@@ -2478,6 +2479,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 0.1
+  screenShakeOnHit: 0
 --- !u!199 &1862595057
 ParticleSystemRenderer:
   serializedVersion: 4

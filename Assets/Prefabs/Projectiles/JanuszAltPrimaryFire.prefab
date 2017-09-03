@@ -236,8 +236,8 @@ MonoBehaviour:
   dmg: 10
   lives: 1
   destroyOnContact: 1
-  addShakeOnDestroy: 0.5
-  addShakeOnPlayerHit: 1.5
+  addShakeOnDestroy: 0
+  addShakeOnPlayerHit: 4
 --- !u!198 &198700869283626238
 ParticleSystem:
   m_ObjectHideFlags: 1

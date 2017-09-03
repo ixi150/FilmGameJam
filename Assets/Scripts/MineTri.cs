@@ -8,10 +8,15 @@ public class MineTri : MonoBehaviour
     public float gracePeriod = 1f;
     public GameObject destroyEffect;
     float timer;
+	public float destroyAfterTime = 10f;
 
     void Update()
     {
         timer += Time.deltaTime;
+		if (timer >= destroyAfterTime) {
+			Destroy(transform.parent.gameObject);
+			Destroy(gameObject);
+		}
     }
 
     void OnTriggerStay2D(Collider2D col)

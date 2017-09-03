@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class Timer : MonoBehaviour {
 	public float startTime = 20f;
 	bool timeStart = false;
+	bool endGame = false;
 	float timeLeft;
 	public GameObject endText, whiteScreen;
 	PlayerSettings settings;
@@ -46,11 +47,8 @@ public class Timer : MonoBehaviour {
 				timeStart = true;
 			}
 
-		if (timeStart&& timeLeft > 0)
-		DecreaseTime ();
-		
-		if (timeLeft < 0)
-			timeLeft = 0;
+		if (timeStart && endGame == false)
+			DecreaseTime ();
 
 //FOR TESTING ONLY
 		if (TestIndicatorLeft == true) {
@@ -109,12 +107,12 @@ public class Timer : MonoBehaviour {
 			endText.GetComponent<Text>().text = "REMIZ(A)";
 			break;
 		case Players.Player1:
-			endText.GetComponent<Text>().text = "Jedynka rozjebał!";
+			endText.GetComponent<Text>().text = "Jedynka rozwalił!";
 			settings.player1score++;
 			settings.lastPlayerWon = 1;
 			break;
 		case Players.Player2:
-			endText.GetComponent<Text>().text = "Dwójka rozjebał!";
+			endText.GetComponent<Text>().text = "Dwójka rozwalił!";
 			settings.player2score++;
 			settings.lastPlayerWon = 2;
 			break;
@@ -122,6 +120,7 @@ public class Timer : MonoBehaviour {
 	}
 
 	void SpawnEndFeels() {
+		endGame = true;
 		StartCoroutine (SpawningEnd());
 		CameraShaker.AddShake (2, Camera.main.transform);
 	}
@@ -141,12 +140,11 @@ public class Timer : MonoBehaviour {
 
 			//zoom
 			var camera = Camera.main.GetComponent<Camera> ();
-			camera.orthographicSize = Mathf.MoveTowards (camera.orthographicSize, 3, Time.deltaTime/70f);
+			camera.orthographicSize = Mathf.MoveTowards (camera.orthographicSize, 3, Time.deltaTime/100f);
 
 			timer += Time.unscaledDeltaTime;
 
 			if (timer >= 4f) {
-				Debug.Log ("lul");
 				var image = whiteScreen.GetComponent<Image> ();
 				var color = image.color;
 				color.a += Time.deltaTime*fadeInSpeed;

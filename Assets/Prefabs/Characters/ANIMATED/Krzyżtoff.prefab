@@ -167,6 +167,7 @@ GameObject:
   - component: {fileID: 70963689933122890}
   - component: {fileID: 50120474625976596}
   - component: {fileID: 114548716526216386}
+  - component: {fileID: 114730788751198222}
   m_Layer: 8
   m_Name: "Krzy\u017Ctoff"
   m_TagString: Player
@@ -548,11 +549,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireRate: 1
   spread: 20
-  shootAmount: 8
+  shootAmount: 10
   muzzle: {fileID: 4306909229569990}
-  projectile: {fileID: 50897724267649916, guid: bdef682f247bd1c4584b126e513f46ab,
+  projectile: {fileID: 50897724267649916, guid: 9aafc9cdee5fd06498a8cdf1da6b5dbf,
     type: 2}
-  shootForce: 20
+  shootForce: 10
   cameraShakeAmplitude: 1
   shootClip: {fileID: 8300000, guid: aeff529d31cf52b48a025b19c251c65f, type: 3}
   FireButtonNumber: 3
@@ -567,6 +568,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e165c3e7b69cb14c99d8b392c34f242, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114730788751198222
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1526063523476790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a932e2bdddd5c14699c3ee3a79590fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyNumber: 1
+  shootForce: 5
+  specials:
+  - {fileID: 1409665594009374, guid: e8fa4cd613671f74b82a08f1f2ac102d, type: 2}
+  muzzle: {fileID: 4306909229569990}
 --- !u!114 &114774212056385726
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -611,7 +628,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireRate: 2
-  spread: 20
+  spread: 2
   shootAmount: 1
   muzzle: {fileID: 4306909229569990}
   projectile: {fileID: 50897724267649916, guid: b9ad5f6b43312814891863c79aa888f9,

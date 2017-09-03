@@ -234,11 +234,11 @@ MonoBehaviour:
   lifetime: 5
   destroyEffect: {fileID: 1651120351613216, guid: a2bb8f84786951946b599ebee5068b34,
     type: 2}
-  dmg: 5
+  dmg: 10
   lives: 1
   destroyOnContact: 0
   addShakeOnDestroy: 0
-  addShakeOnPlayerHit: 0
+  addShakeOnPlayerHit: 7
 --- !u!114 &114974522126045754
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -250,7 +250,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e2c1e20a5c4dc649ac24583d831d623, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0.1
+  damage: 1
 --- !u!198 &198700869283626238
 ParticleSystem:
   m_ObjectHideFlags: 1
