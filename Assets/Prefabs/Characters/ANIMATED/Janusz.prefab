@@ -151,6 +151,7 @@ GameObject:
   - component: {fileID: 70963689933122890}
   - component: {fileID: 50120474625976596}
   - component: {fileID: 114548716526216386}
+  - component: {fileID: 114561311471543416}
   m_Layer: 8
   m_Name: Janusz
   m_TagString: Player
@@ -255,7 +256,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1526063523476790}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.1768265, y: -1.5613661, z: 0}
+  m_LocalPosition: {x: 0.5685212, y: 0.5404163, z: 0}
   m_LocalScale: {x: 1.1, y: 1.1, z: 1}
   m_Children:
   - {fileID: 4195346938756084}
@@ -486,6 +487,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e165c3e7b69cb14c99d8b392c34f242, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114561311471543416
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1526063523476790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a932e2bdddd5c14699c3ee3a79590fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyNumber: 1
+  specials:
+  - {fileID: 1409665594009374, guid: e8fa4cd613671f74b82a08f1f2ac102d, type: 2}
+  muzzle: {fileID: 4306909229569990}
 --- !u!114 &114759709153107630
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -553,7 +569,7 @@ MonoBehaviour:
   spread: 5
   shootAmount: 1
   muzzle: {fileID: 4306909229569990}
-  projectile: {fileID: 50897724267649916, guid: bdef682f247bd1c4584b126e513f46ab,
+  projectile: {fileID: 50897724267649916, guid: 4e06de86e47379d42bbdd9c2e9f4be43,
     type: 2}
   shootForce: 10
   cameraShakeAmplitude: 1

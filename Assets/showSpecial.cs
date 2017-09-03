@@ -9,7 +9,7 @@ public class showSpecial : MonoBehaviour {
 	GameObject player;
 	public bool isFirstPlayer;
 	PlayerController control;
-	public Sprite[] images;
+	public Sprite images;
 	// Use this for initialization
 	void Start () {
 		internalSpecial = special;
@@ -29,7 +29,7 @@ public class showSpecial : MonoBehaviour {
 	void Update () {
 		special = control.specialWeapon;
 		if (special != internalSpecial) {
-			transform.GetComponent<Image> ().sprite = images[special];
+			transform.GetComponent<Image> ().sprite = images;
 			internalSpecial = special;
 
 		}

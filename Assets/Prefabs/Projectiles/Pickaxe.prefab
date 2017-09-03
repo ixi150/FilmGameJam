@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 61222880345465036}
   m_Layer: 9
   m_Name: Pickaxe
-  m_TagString: Warp
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -198,7 +198,7 @@ MonoBehaviour:
   lifetime: 5
   destroyEffect: {fileID: 1651120351613216, guid: a2bb8f84786951946b599ebee5068b34,
     type: 2}
-  dmg: 10
+  dmg: 20
   lives: 5
   destroyOnContact: 1
   addShakeOnDestroy: 0.5
