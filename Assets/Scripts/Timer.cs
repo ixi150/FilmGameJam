@@ -103,7 +103,7 @@ public class Timer : MonoBehaviour {
 		void PlayerWon(Players playerWon) {  ///WIP, will be in a different obj
 		switch (playerWon) {
 		case Players.None:
-			endText.GetComponent<Text>().text = "REMIZ(A)";
+			endText.GetComponent<Text>().text = "REMIZ!";
 			break;
 		case Players.Player1:
 			endText.GetComponent<Text> ().text = "Wygrywa gracz nr 1!";
@@ -134,18 +134,18 @@ public class Timer : MonoBehaviour {
 			endText.GetComponent<Text>().color = new Color(endText.GetComponent<Text>().color.r, endText.GetComponent<Text>().color.g, endText.GetComponent<Text>().color.b, endText.GetComponent<Text>().color.a + 5/255f);
 
 			//time slows down
-			Time.timeScale = Mathf.MoveTowards(Time.timeScale, 0.05f, Time.deltaTime);
+			Time.timeScale = Mathf.MoveTowards(Time.timeScale, 0.05f, Time.unscaledDeltaTime);
 
 			//zoom
-			var camera = Camera.main.GetComponent<Camera> ();
-			camera.orthographicSize = Mathf.MoveTowards (camera.orthographicSize, 3, Time.deltaTime);
+            foreach (var camera in  Camera.main.GetComponentsInChildren<Camera> ())
+			camera.orthographicSize = Mathf.MoveTowards (camera.orthographicSize, 2, Time.unscaledDeltaTime/2);
 
 			timer += Time.unscaledDeltaTime;
 
 			if (timer >= 4f) {
 				var image = whiteScreen.GetComponent<Image> ();
 				var color = image.color;
-				color.a += Time.deltaTime*fadeInSpeed;
+				color.a += Time.unscaledDeltaTime * fadeInSpeed;
 				image.color = color;
 
 				if (whiteScreen.GetComponent<Image> ().color.a >= 1) {

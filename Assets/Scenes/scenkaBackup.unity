@@ -2609,7 +2609,7 @@ MonoBehaviour:
   TestIndicatorLeft: 0
   dmgThreshold: 100
   guiHolder: {fileID: 2126257951}
-  fadeInSpeed: 5
+  fadeInSpeed: 2
 --- !u!224 &1667540319
 RectTransform:
   m_ObjectHideFlags: 0

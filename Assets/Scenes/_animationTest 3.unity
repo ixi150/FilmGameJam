@@ -2289,6 +2289,16 @@ Prefab:
       propertyPath: far clip plane
       value: 999.41
       objectReference: {fileID: 0}
+    - target: {fileID: 20561478792669560, guid: 6c3a4bad0de83ad4cb6679e1ed962491,
+        type: 2}
+      propertyPath: orthographic size
+      value: 4.66
+      objectReference: {fileID: 0}
+    - target: {fileID: 20934272662166820, guid: 6c3a4bad0de83ad4cb6679e1ed962491,
+        type: 2}
+      propertyPath: orthographic size
+      value: 4.88
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6c3a4bad0de83ad4cb6679e1ed962491, type: 2}
   m_IsPrefabParent: 0
@@ -2686,14 +2696,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 774bee7fc7fecca4f813f45e0ed33ca3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startTime: 180
+  startTime: 2
   endText: {fileID: 701882468}
   whiteScreen: {fileID: 1622425918}
   TestIndicatorRight: 0
   TestIndicatorLeft: 0
   dmgThreshold: 100
   guiHolder: {fileID: 2126257951}
-  fadeInSpeed: 5
+  fadeInSpeed: 1
 --- !u!224 &1667540319
 RectTransform:
   m_ObjectHideFlags: 0
