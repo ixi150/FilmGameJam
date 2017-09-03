@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4569359205196440}
   - component: {fileID: 212215890086100016}
+  - component: {fileID: 114155385323425134}
   m_Layer: 8
   m_Name: head sprite
   m_TagString: Untagged
@@ -88,6 +89,7 @@ GameObject:
   - component: {fileID: 50582112268112332}
   - component: {fileID: 114076688417383974}
   - component: {fileID: 114921234437736832}
+  - component: {fileID: 114779529717931210}
   m_Layer: 8
   m_Name: Alienka
   m_TagString: Player
@@ -104,6 +106,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4069369865508658}
   - component: {fileID: 212820031768864714}
+  - component: {fileID: 114978174655652490}
   m_Layer: 8
   m_Name: Arm Sprite
   m_TagString: Untagged
@@ -120,6 +123,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4540089830823036}
   - component: {fileID: 212910491605734986}
+  - component: {fileID: 114823881413097028}
   m_Layer: 8
   m_Name: PlayerSprite (1)
   m_TagString: Untagged
@@ -253,7 +257,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1408231905863518}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.800491, y: 2.3601341, z: 0}
+  m_LocalPosition: {x: -2.96, y: 2.16, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4662205127468902}
@@ -508,6 +512,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e165c3e7b69cb14c99d8b392c34f242, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114155385323425134
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1042201439865844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e90c52e2a7b4ab34f8cf0731d8477ad4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114325503993515388
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -554,6 +569,58 @@ MonoBehaviour:
   spawnMineNumber: 3
   mine: {fileID: 1738270482401060, guid: 3299e5d7c5f50e848a0b8165a694f6e7, type: 2}
   cooldown: 4
+--- !u!114 &114779529717931210
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1408231905863518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e8ae10de4d93a9448f7905c4f755f70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gradientAnimation:
+    serializedVersion: 2
+    key0: {r: 1, g: 0, b: 0, a: 1}
+    key1: {r: 0, g: 0, b: 0, a: 1}
+    key2: {r: 0, g: 0, b: 0, a: 0}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 65535
+    ctime2: 0
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_NumColorKeys: 2
+    m_NumAlphaKeys: 2
+  duration: 0.3
+--- !u!114 &114823881413097028
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1630455606113030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e90c52e2a7b4ab34f8cf0731d8477ad4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114921234437736832
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -570,6 +637,17 @@ MonoBehaviour:
   specials:
   - {fileID: 1409665594009374, guid: e8fa4cd613671f74b82a08f1f2ac102d, type: 2}
   muzzle: {fileID: 4371575770295142}
+--- !u!114 &114978174655652490
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1472726313738586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e90c52e2a7b4ab34f8cf0731d8477ad4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212215890086100016
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -583,7 +661,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 62adc4914dbd0ea4188a5f94bbcba6d6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -709,7 +787,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 62adc4914dbd0ea4188a5f94bbcba6d6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -751,7 +829,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 62adc4914dbd0ea4188a5f94bbcba6d6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

@@ -29,6 +29,6 @@ public class OverColor : MonoBehaviour
     {
         gradientAnimation = gradient;
         this.duration = duration;
-        timer = 0;
+        timer = 0; 
     }
 }
