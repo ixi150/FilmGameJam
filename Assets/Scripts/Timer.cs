@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class Timer : MonoBehaviour {
 	public float startTime = 20f;
 	bool timeStart = false;
+	bool endGame = false;
 	float timeLeft;
 	public GameObject endText, whiteScreen;
 	PlayerSettings settings;
@@ -46,11 +47,8 @@ public class Timer : MonoBehaviour {
 				timeStart = true;
 			}
 
-		if (timeStart)
-		DecreaseTime ();
-		
-		if (timeLeft < 0)
-			timeLeft = 0;
+		if (timeStart && endGame == false)
+			DecreaseTime ();
 
 //FOR TESTING ONLY
 		if (TestIndicatorLeft == true) {
@@ -71,9 +69,9 @@ public class Timer : MonoBehaviour {
 
 	void DecideWinner() {
 		if (indicator < 0)
-			PlayerWon (Players.Player1);
-		else if (indicator > 0)
 			PlayerWon (Players.Player2);
+		else if (indicator > 0)
+			PlayerWon (Players.Player1);
 		else
 			PlayerWon (Players.None);
 
@@ -99,7 +97,6 @@ public class Timer : MonoBehaviour {
 		float overKill = Mathf.Abs(indicator) + timeLeft/startTime * dmgThreshold - dmgThreshold;
 		timeLeft -= overKill;
 		indicator = Mathf.Abs (indicator) / indicator * (dmgThreshold - timeLeft/startTime*dmgThreshold);
-        CameraShaker.AddShake(overKill, guiHolder);
 
 	}
 
@@ -109,12 +106,12 @@ public class Timer : MonoBehaviour {
 			endText.GetComponent<Text>().text = "REMIZ(A)";
 			break;
 		case Players.Player1:
-			endText.GetComponent<Text>().text = "Jedynka rozjebał!";
+			endText.GetComponent<Text> ().text = "Wygrywa gracz nr 1!";
 			settings.player1score++;
 			settings.lastPlayerWon = 1;
 			break;
 		case Players.Player2:
-			endText.GetComponent<Text>().text = "Dwójka rozjebał!";
+			endText.GetComponent<Text>().text = "Wygrywa gracz nr 2!";
 			settings.player2score++;
 			settings.lastPlayerWon = 2;
 			break;
@@ -122,8 +119,8 @@ public class Timer : MonoBehaviour {
 	}
 
 	void SpawnEndFeels() {
+		endGame = true;
 		StartCoroutine (SpawningEnd());
-		CameraShaker.AddShake (2, Camera.main.transform);
 	}
 
 	IEnumerator SpawningEnd() {
@@ -137,16 +134,15 @@ public class Timer : MonoBehaviour {
 			endText.GetComponent<Text>().color = new Color(endText.GetComponent<Text>().color.r, endText.GetComponent<Text>().color.g, endText.GetComponent<Text>().color.b, endText.GetComponent<Text>().color.a + 5/255f);
 
 			//time slows down
-			Time.timeScale = Mathf.MoveTowards(Time.timeScale, 0.1f, Time.deltaTime);
+			Time.timeScale = Mathf.MoveTowards(Time.timeScale, 0.05f, Time.deltaTime);
 
 			//zoom
 			var camera = Camera.main.GetComponent<Camera> ();
-			camera.orthographicSize = Mathf.MoveTowards (camera.orthographicSize, 3, Time.deltaTime/70f);
+			camera.orthographicSize = Mathf.MoveTowards (camera.orthographicSize, 3, Time.deltaTime);
 
 			timer += Time.unscaledDeltaTime;
 
 			if (timer >= 4f) {
-				Debug.Log ("lul");
 				var image = whiteScreen.GetComponent<Image> ();
 				var color = image.color;
 				color.a += Time.deltaTime*fadeInSpeed;

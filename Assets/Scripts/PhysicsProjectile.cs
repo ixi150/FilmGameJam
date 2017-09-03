@@ -13,7 +13,7 @@ public class PhysicsProjectile : MonoBehaviour
     public float addShakeOnDestroy = 1.5f;
     public float addShakeOnPlayerHit = 2.0f;
     PlayerController owner;
-    void Start()
+	void Start()
     {
         timer = lifetime;
 
@@ -39,16 +39,12 @@ public class PhysicsProjectile : MonoBehaviour
         if (player)
         {
             player.DealDmg(dmg);
-            DestroyThisAndAddShake(addShakeOnPlayerHit);
-        }
-        else
-        {
-            DestroyThisAndAddShake(addShakeOnDestroy);
         }
 
         if (extraTimer >= 0.5f && destroyOnContact)
         {
-            lives--;
+			Debug.Log (lives);            
+			lives--;
             extraTimer = 0;
         }
         if (lives <= 0)
@@ -58,20 +54,6 @@ public class PhysicsProjectile : MonoBehaviour
                 Instantiate(destroyEffect, transform.position, Quaternion.identity);
             }
             Destroy(gameObject);
-        }
-    }
-
-    void DestroyThisAndAddShake(float shake)
-    {
-        if (destroyOnContact)
-        {
-            if (destroyEffect != null)
-            {
-                Instantiate(destroyEffect, transform.position, Quaternion.identity);
-                CameraShaker.AddShake(shake, Camera.main.transform);
-                Destroy(gameObject);
-            }
-
         }
     }
 

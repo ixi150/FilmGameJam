@@ -38,10 +38,10 @@ GameObject:
   - component: {fileID: 50897724267649916}
   - component: {fileID: 114238616416526538}
   - component: {fileID: 114676266694048282}
-  - component: {fileID: 61222880345465036}
+  - component: {fileID: 58269116416914366}
   m_Layer: 9
   m_Name: Pickaxe
-  m_TagString: Warp
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -55,6 +55,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4799880537609430}
   - component: {fileID: 212926552755906350}
+  - component: {fileID: 61231515203674574}
   m_Layer: 9
   m_Name: diamondpickaxe_icon32
   m_TagString: Untagged
@@ -95,7 +96,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1409665594009374}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.6252805, y: -3.1364539, z: 0.111328125}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children:
   - {fileID: 4799880537609430}
@@ -114,7 +115,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 3
   m_LinearDrag: 0
   m_AngularDrag: 0.92
   m_GravityScale: 0.5
@@ -123,6 +124,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!58 &58269116416914366
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1409665594009374}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.1
 --- !u!61 &61112311666765896
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -146,14 +162,14 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.05, y: 0.05}
+  m_Size: {x: 0.12, y: 0.12}
   m_EdgeRadius: 0
---- !u!61 &61222880345465036
+--- !u!61 &61231515203674574
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1409665594009374}
+  m_GameObject: {fileID: 1565636584837492}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 6200000, guid: 7e47da2c9fed28c47ae91a7cf24f3a2d, type: 2}
@@ -163,15 +179,15 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.7509091, y: 0.74363637}
+    newSize: {x: 2, y: 2}
+    adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.05, y: 0.05}
+  m_Size: {x: 0.5, y: 0.5}
   m_EdgeRadius: 0
 --- !u!114 &114238616416526538
 MonoBehaviour:
@@ -198,7 +214,7 @@ MonoBehaviour:
   lifetime: 5
   destroyEffect: {fileID: 1651120351613216, guid: a2bb8f84786951946b599ebee5068b34,
     type: 2}
-  dmg: 10
+  dmg: 5
   lives: 5
   destroyOnContact: 1
   addShakeOnDestroy: 0.5
@@ -235,7 +251,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a7e292c447d264143b07e846d49da64e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 375cb55e9cae4ab43ad7646cd4184d06, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

@@ -24,6 +24,6 @@ public class timerSelect : MonoBehaviour {
 	}
 
 	void startGame() {
-		SceneManager.LoadScene ("scenka");
+		SceneManager.LoadScene (1);
 	}
 }
