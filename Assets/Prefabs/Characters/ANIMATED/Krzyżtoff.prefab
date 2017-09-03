@@ -203,6 +203,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4478577854618976}
   - component: {fileID: 212266217873509392}
+  - component: {fileID: 114976408238851014}
   m_Layer: 8
   m_Name: head sprite
   m_TagString: Untagged
