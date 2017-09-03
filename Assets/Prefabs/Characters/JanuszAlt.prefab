@@ -136,8 +136,9 @@ GameObject:
   - component: {fileID: 70267280802969108}
   - component: {fileID: 50567245089880536}
   - component: {fileID: 114412615277848030}
+  - component: {fileID: 114719667835560118}
   m_Layer: 8
-  m_Name: Janusz
+  m_Name: JanuszAlt
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -441,6 +442,20 @@ MonoBehaviour:
   - {fileID: 1456864461471262}
   specialWeapon: 0
   isFirstPlayer: 1
+--- !u!114 &114719667835560118
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1928123269577430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a932e2bdddd5c14699c3ee3a79590fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyNumber: 0
+  specials: []
+  muzzle: {fileID: 0}
 --- !u!114 &114985857817916522
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -452,13 +467,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e60cd70c62341a4cb4961fa7e532d31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireRate: 2
+  fireRate: 1
   spread: 5
-  shootAmount: 1
+  shootAmount: 5
   muzzle: {fileID: 4504846301976298}
-  projectile: {fileID: 50897724267649916, guid: bdef682f247bd1c4584b126e513f46ab,
+  projectile: {fileID: 50897724267649916, guid: fce3cb937f2e02a4bae50cb1bc8bf9cb,
     type: 2}
-  shootForce: 10
+  shootForce: 20
   cameraShakeAmplitude: 1
   shootClip: {fileID: 8300000, guid: aeff529d31cf52b48a025b19c251c65f, type: 3}
   FireButtonNumber: 2

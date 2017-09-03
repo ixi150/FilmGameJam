@@ -13,4 +13,6 @@ public class PlayerSettings : MonoBehaviour {
 		} else
 			Destroy (gameObject);
 	}
+
+
 }
