@@ -174,6 +174,7 @@ public class PlayerController : MonoBehaviour
             timer.GetComponent<Timer>().moveIndicator(false, ammount);
         }
         else timer.GetComponent<Timer>().moveIndicator(true, ammount);
+        GetComponent<OverColorController>().Animate();
     }
 		
 }

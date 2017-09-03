@@ -25,6 +25,7 @@ public class OverColorController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.P))
         {
             Animate();
-        }
-    }
+        }   
+    } 
+
 }
