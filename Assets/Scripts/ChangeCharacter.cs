@@ -16,7 +16,8 @@ public class ChangeCharacter : MonoBehaviour {
 	public List<GameObject> charaObj;
 	public List<PlayerChoice> players;
 	public float chooseThreshold;
-
+	GameObject sett;
+	PlayerSettings settings;
 	public string player1axis, player1choose, player1cancel;
 	public string player2axis, player2choose, player2cancel;
 
@@ -42,6 +43,10 @@ public class ChangeCharacter : MonoBehaviour {
 		}
 			
 		);
+	}
+	void Start() {
+		sett = GameObject.FindGameObjectWithTag ("Settings");
+		settings = sett.GetComponent<PlayerSettings> ();
 	}
 
 
@@ -109,5 +114,7 @@ public class ChangeCharacter : MonoBehaviour {
 	void startGame() {
 		obj = Instantiate (rdy, rdy.transform.position, rdy.transform.rotation);
 		obj.transform.SetParent (canvas.transform, false);
+		settings.charChoice1 = players [0].currChoice;
+		settings.charChoice2 = players [1].currChoice;
 	}
 }

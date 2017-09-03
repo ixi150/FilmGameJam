@@ -55,7 +55,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4799880537609430}
   - component: {fileID: 212926552755906350}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: diamondpickaxe_icon32
   m_TagString: Untagged
   m_Icon: {fileID: 0}

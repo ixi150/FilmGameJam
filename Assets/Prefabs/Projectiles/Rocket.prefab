@@ -230,13 +230,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d16d2d9fd78b1b44798fc20c4464a6ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destroyOnContact: 1
+  lifetime: 5
   destroyEffect: {fileID: 1651120351613216, guid: a2bb8f84786951946b599ebee5068b34,
     type: 2}
+  dmg: 1
+  lives: 0
+  destroyOnContact: 1
   addShakeOnDestroy: 1
   addShakeOnPlayerHit: 2
-  lives: 0
-  dmg: 1
 --- !u!198 &198700869283626238
 ParticleSystem:
   m_ObjectHideFlags: 1

@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Projectile
+  - Warp
+  - Settings
+  - Timer
   layers:
   - Default
   - TransparentFX
@@ -16,10 +19,10 @@ TagManager:
   - 
   - Player
   - Projectile
-  - 
-  - 
-  - 
-  - 
+  - Platform
+  - PlatformVsProjectiles
+  - PowerUp
+  - Item
   - 
   - 
   - 
@@ -41,4 +44,16 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: bg
+    uniqueID: 3250593309
+    locked: 0
+  - name: player1
+    uniqueID: 1681965983
+    locked: 0
+  - name: player2
+    uniqueID: 3338526329
+    locked: 0
+  - name: projectiles
+    uniqueID: 2703012667
     locked: 0

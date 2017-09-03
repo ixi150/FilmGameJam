@@ -20,20 +20,25 @@ public class BasicWeapon : MonoBehaviour
     public AudioClip shootClip;
     AudioSource audioSource;
 
-	public string FireButton;
+	string FireButton;
+	public int FireButtonNumber;
 	void Start ()
     {
         audioSource = GetComponent<AudioSource>();
         audioSource.playOnAwake = false;
         audioSource.spatialBlend = 0.5f;
         audioSource.clip = shootClip;
+		if (transform.parent.GetComponentInParent<PlayerController> ().isFirstPlayer) {
+			FireButton = "joystick 1 button " + FireButtonNumber;
+		} else FireButton = "joystick 2 button " + FireButtonNumber;
+
 	}
 	
 	void Update ()
     {
         if (fireRate > 0)
         {
-			if (Input.GetKey(FireButton) && timer <= 0)
+			if (Input.GetKeyDown(FireButton) && timer <= 0)
             {
                 Shoot();
             }
@@ -51,7 +56,7 @@ public class BasicWeapon : MonoBehaviour
 			instance.transform.GetComponent<PhysicsProjectile> ().SetOwner (transform.parent.GetComponent<PlayerController> ());
         }
 
-        CameraShaker.AddShake(cameraShakeAmplitude);
+        CameraShaker.AddShake(cameraShakeAmplitude,Camera.main.transform);
         audioSource.Play();
         timer = 1 / fireRate;
     }

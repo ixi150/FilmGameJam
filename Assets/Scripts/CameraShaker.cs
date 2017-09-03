@@ -10,14 +10,21 @@ public class CameraShaker : MonoBehaviour
     public float shakeDecay = 5.0f;
 
     float currentAmplitude;
-    Vector2 shake;
+
+    Transform target;
 
     void Start ()
     {
         cameraShaker = this;
+        target = transform;
 	}
 	
 	void Update ()
+    {
+        Shakin(target);
+    }
+
+    void Shakin(Transform target)
     {
         if (currentAmplitude > 0)
         {
@@ -29,20 +36,17 @@ public class CameraShaker : MonoBehaviour
             bx *= currentAmplitude;
             by *= currentAmplitude;
 
-            shake = new Vector2(bx, by);
-
-            transform.localPosition = new Vector3(bx, by, -1);
+            target.localPosition = new Vector3(bx, by, -1);
         }
     }
 
-    public static void AddShake(float amplitude)
+    public static void AddShake(float amplitude, Transform target)
     {
-        cameraShaker.SetAmplitude(amplitude);
+        cameraShaker.SetAmplitude(amplitude, target);
     }
 
-    void SetAmplitude(float amplitude)
+    void SetAmplitude(float amplitude, Transform target)
     {
         currentAmplitude = amplitude;
     }
-
 }
