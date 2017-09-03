@@ -116,7 +116,7 @@ GameObject:
   - component: {fileID: 4278140036772628}
   - component: {fileID: 114867890777233312}
   - component: {fileID: 82839778032209980}
-  - component: {fileID: 114893563113038182}
+  - component: {fileID: 114450659322374372}
   m_Layer: 8
   m_Name: Arm
   m_TagString: Untagged
@@ -315,7 +315,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1331100106323370}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.753, y: -0.009, z: 0}
+  m_LocalPosition: {x: 1.267, y: 0.076, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4813703225130220}
@@ -535,6 +535,27 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114450659322374372
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1359524408875502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e60cd70c62341a4cb4961fa7e532d31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireRate: 1
+  spread: 20
+  shootAmount: 8
+  muzzle: {fileID: 4306909229569990}
+  projectile: {fileID: 50897724267649916, guid: bdef682f247bd1c4584b126e513f46ab,
+    type: 2}
+  shootForce: 20
+  cameraShakeAmplitude: 1
+  shootClip: {fileID: 8300000, guid: aeff529d31cf52b48a025b19c251c65f, type: 3}
+  FireButtonNumber: 3
 --- !u!114 &114548716526216386
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -591,25 +612,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireRate: 2
   spread: 20
-  shootAmount: 5
+  shootAmount: 1
   muzzle: {fileID: 4306909229569990}
-  projectile: {fileID: 50897724267649916, guid: bdef682f247bd1c4584b126e513f46ab,
+  projectile: {fileID: 50897724267649916, guid: b9ad5f6b43312814891863c79aa888f9,
     type: 2}
   shootForce: 20
   cameraShakeAmplitude: 1
   shootClip: {fileID: 8300000, guid: aeff529d31cf52b48a025b19c251c65f, type: 3}
-  FireButtonNumber: 0
---- !u!114 &114893563113038182
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1359524408875502}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  FireButtonNumber: 2
 --- !u!212 &212034798224598462
 SpriteRenderer:
   m_ObjectHideFlags: 1
