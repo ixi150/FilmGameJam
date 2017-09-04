@@ -17,6 +17,10 @@ public class StartTimer : MonoBehaviour {
 		timer = startTime;
 		foreach (var player in GameObject.FindObjectsOfType<PlayerController>())
 			player.enabled = false;
+		foreach (var weapon in GameObject.FindObjectsOfType<BasicWeapon>())
+			weapon.enabled = false;
+		foreach (var plaform in GameObject.FindObjectsOfType<MovingPlatform>())
+			plaform.enabled = false;
 	}
 	
 	// Update is called once per frame
@@ -25,7 +29,10 @@ public class StartTimer : MonoBehaviour {
 		if (timer <= 0 ) {
 			foreach (var pl in GameObject.FindObjectsOfType<PlayerController>())
 				pl.enabled = true;
-
+			foreach (var weapon in GameObject.FindObjectsOfType<BasicWeapon>())
+				weapon.enabled = true;
+			foreach (var plaform in GameObject.FindObjectsOfType<MovingPlatform>())
+				plaform.enabled = true;
 			Destroy (gameObject);
 		}
 	}

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerSettings : MonoBehaviour {
 	public int charChoice1, charChoice2, player1score, player2score, lastPlayerWon;
-	PlayerSettings settings;
+	static PlayerSettings settings;
 	// Use this for initialization
 	void Start () {
 		if (settings == null) {

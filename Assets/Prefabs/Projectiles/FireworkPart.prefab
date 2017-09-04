@@ -56,7 +56,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1706443206506946}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4933050586270112}
@@ -238,6 +238,7 @@ MonoBehaviour:
   destroyOnContact: 1
   addShakeOnDestroy: 0
   addShakeOnPlayerHit: 0
+  extraTimerTreshold: 0
 --- !u!198 &198700869283626238
 ParticleSystem:
   m_ObjectHideFlags: 1

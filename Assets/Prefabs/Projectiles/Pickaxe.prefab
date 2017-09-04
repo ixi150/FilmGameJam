@@ -132,7 +132,7 @@ CircleCollider2D:
   m_GameObject: {fileID: 1409665594009374}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 7e47da2c9fed28c47ae91a7cf24f3a2d, type: 2}
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -214,11 +214,12 @@ MonoBehaviour:
   lifetime: 5
   destroyEffect: {fileID: 1651120351613216, guid: a2bb8f84786951946b599ebee5068b34,
     type: 2}
-  dmg: 5
+  dmg: 10
   lives: 5
   destroyOnContact: 1
   addShakeOnDestroy: 0.5
   addShakeOnPlayerHit: 0
+  extraTimerTreshold: 0
 --- !u!212 &212926552755906350
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -220,7 +220,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4586062550875168}
   - component: {fileID: 212882602806975484}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: krzyz
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -308,7 +308,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1526063523476790}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.64, y: 2.17, z: 0}
+  m_LocalPosition: {x: -108.3315, y: 20.587986, z: 0}
   m_LocalScale: {x: 1, y: 1.1, z: 1}
   m_Children:
   - {fileID: 4195346938756084}
@@ -582,14 +582,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireRate: 1
-  spread: 5
+  spread: 15
   shootAmount: 15
   muzzle: {fileID: 4306909229569990}
   projectile: {fileID: 50897724267649916, guid: d6db1ce065dca9147b1d6e16d35db54d,
     type: 2}
-  shootForce: 10
+  shootForce: 25
   cameraShakeAmplitude: 1
-  shootClip: {fileID: 8300000, guid: aeff529d31cf52b48a025b19c251c65f, type: 3}
+  shootClip: {fileID: 8300000, guid: 693c6ab82d994cb47b11ba5fe9f9c5ce, type: 3}
   FireButtonNumber: 3
 --- !u!114 &114455180003407902
 MonoBehaviour:
@@ -673,14 +673,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireRate: 2
-  spread: 2
+  spread: 0
   shootAmount: 1
   muzzle: {fileID: 4306909229569990}
   projectile: {fileID: 50897724267649916, guid: b9ad5f6b43312814891863c79aa888f9,
     type: 2}
-  shootForce: 20
+  shootForce: 50
   cameraShakeAmplitude: 1
-  shootClip: {fileID: 8300000, guid: aeff529d31cf52b48a025b19c251c65f, type: 3}
+  shootClip: {fileID: 8300000, guid: 693c6ab82d994cb47b11ba5fe9f9c5ce, type: 3}
   FireButtonNumber: 2
 --- !u!114 &114908040535480530
 MonoBehaviour:
@@ -1110,9 +1110,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 1681965983
+  m_SortingLayer: 2
+  m_SortingOrder: -1459
   m_Sprite: {fileID: 21300000, guid: 76f93085fc982c24baddd2ba569b7398, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

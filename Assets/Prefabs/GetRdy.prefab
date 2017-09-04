@@ -127,7 +127,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Get ready!
+  m_Text: Szykuj majty!
 --- !u!114 &114723306141544392
 MonoBehaviour:
   m_ObjectHideFlags: 1

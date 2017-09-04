@@ -133,6 +133,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1511878204814424
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4338280018360820}
+  m_Layer: 8
+  m_Name: Muzzle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1545695765469438
 GameObject:
   m_ObjectHideFlags: 1
@@ -205,7 +220,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4027936213931508}
   m_Layer: 8
-  m_Name: Muzzle
+  m_Name: Muzzle 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -217,11 +232,11 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1983043514726970}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.579, y: -0.17, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0.012075404, w: 0.9999271}
+  m_LocalPosition: {x: 0.574, y: -0.164, z: 0}
+  m_LocalScale: {x: 1.0309278, y: 1.0309278, z: 1.0309278}
   m_Children: []
-  m_Father: {fileID: 4445611427751718}
+  m_Father: {fileID: 4794916543485674}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4125801783347664
@@ -251,6 +266,19 @@ Transform:
   m_Father: {fileID: 4830660684701198}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4338280018360820
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1511878204814424}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.579, y: -0.17, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4445611427751718}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4445611427751718
 Transform:
   m_ObjectHideFlags: 1
@@ -262,7 +290,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4740113242880820}
-  - {fileID: 4027936213931508}
+  - {fileID: 4338280018360820}
   m_Father: {fileID: 4650137731850084}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -330,6 +358,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4508674795949310}
+  - {fileID: 4027936213931508}
   m_Father: {fileID: 4308361432625476}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 1.3840001}
@@ -340,7 +369,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1213182560585360}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.12, y: 2.26, z: 0}
+  m_LocalPosition: {x: -107.220215, y: 20.641085, z: 0}
   m_LocalScale: {x: 0.96, y: 0.96, z: 0.96}
   m_Children:
   - {fileID: 4830660684701198}
@@ -525,7 +554,7 @@ MonoBehaviour:
   shootForce: 5
   specials:
   - {fileID: 1409665594009374, guid: e8fa4cd613671f74b82a08f1f2ac102d, type: 2}
-  muzzle: {fileID: 4027936213931508}
+  muzzle: {fileID: 4338280018360820}
 --- !u!114 &114187696737854164
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -589,10 +618,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e60cd70c62341a4cb4961fa7e532d31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireRate: 25
-  spread: 1
+  fireRate: 8
+  spread: 2
   shootAmount: 1
-  muzzle: {fileID: 4027936213931508}
+  muzzle: {fileID: 4338280018360820}
   projectile: {fileID: 50897724267649916, guid: c53f40931d5dc574cade69217fd9006d,
     type: 2}
   shootForce: 15
@@ -677,15 +706,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e60cd70c62341a4cb4961fa7e532d31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireRate: 1
+  fireRate: 8
   spread: 2
-  shootAmount: 3
+  shootAmount: 1
   muzzle: {fileID: 4027936213931508}
-  projectile: {fileID: 50897724267649916, guid: bdef682f247bd1c4584b126e513f46ab,
+  projectile: {fileID: 50897724267649916, guid: c53f40931d5dc574cade69217fd9006d,
     type: 2}
   shootForce: 15
   cameraShakeAmplitude: 0
-  shootClip: {fileID: 0}
+  shootClip: {fileID: 8300000, guid: aeff529d31cf52b48a025b19c251c65f, type: 3}
   FireButtonNumber: 3
 --- !u!114 &114926715179655488
 MonoBehaviour:

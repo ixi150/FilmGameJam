@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 114676266694048282}
   - component: {fileID: 114141559883027068}
   m_Layer: 9
-  m_Name: Projectile
+  m_Name: sis 2
   m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3515,7 +3515,7 @@ ParticleSystemRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3c9e4ecf18ed74646ac27629c00cf308, type: 2}
+  - {fileID: 2100000, guid: b6b78d9e7c8ae6648a5effc2d1668772, type: 2}
   - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0

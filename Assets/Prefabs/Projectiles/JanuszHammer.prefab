@@ -117,11 +117,12 @@ MonoBehaviour:
   lifetime: 5
   destroyEffect: {fileID: 1651120351613216, guid: a2bb8f84786951946b599ebee5068b34,
     type: 2}
-  dmg: 5
+  dmg: 10
   lives: 1
   destroyOnContact: 1
   addShakeOnDestroy: 0
   addShakeOnPlayerHit: 0
+  extraTimerTreshold: 0
 --- !u!212 &212358664075248794
 SpriteRenderer:
   m_ObjectHideFlags: 1
